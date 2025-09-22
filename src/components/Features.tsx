@@ -80,7 +80,7 @@ export const Features: React.FC = () => {
               <h2 className="font-perfectly-nineties font-[550] text-black text-[56px] leading-[60px] tracking-[-0.32px] text-center text-balance max-w-[700px] w-[700px] pb-4 mx-auto max-md:text-3xl">
                 {feature.title}
               </h2>
-              <p className="text-gray-600 text-base font-medium max-w-2xl mx-auto">
+              <p className="text-gray-600 text-base font-medium max-w-2xl mx-auto leading-6 text-center">
                 {feature.description}
               </p>
             </div>
