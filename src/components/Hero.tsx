@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
+import { AnimatedCompanies } from './AnimatedCompanies';
 
 export const Hero: React.FC = () => {
   return (
@@ -29,13 +30,7 @@ export const Hero: React.FC = () => {
           Trusted by 2,000,000+ researchers and students
         </p>
 
-        <div className="flex justify-center gap-[27px] mt-8 max-md:grid max-md:grid-cols-2 max-md:gap-4">
-          {[...Array(7)].map((_, i) => (
-            <div key={i} className="w-36 h-32 bg-gray-100 rounded-lg flex items-center justify-center">
-              <div className="w-20 h-16 bg-gray-200 rounded"></div>
-            </div>
-          ))}
-        </div>
+        <AnimatedCompanies />
 
         <div className="bg-gray-100 h-[666px] mt-9 rounded-xl flex items-center justify-center max-md:h-[400px]">
           <div className="text-gray-400 text-lg">Product Demo Video</div>
