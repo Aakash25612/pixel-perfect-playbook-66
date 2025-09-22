@@ -6,8 +6,10 @@ export const Hero: React.FC = () => {
   return (
     <section className="pt-[150px] pb-16 px-4">
       <div className="max-w-[1312px] mx-auto text-center">
-        <h1 className="font-perfectlyNineties font-[550] text-balance text-center mx-auto leading-[40px] sm:leading-[48px] md:leading-[60px] lg:leading-[72px] xl:leading-[80px] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] xl:text-[72px] max-w-[820px] text-black">
-          AI workspace for scientists, students, and research teams
+        <h1 className="text-black text-[53px] font-semibold leading-loose tracking-[-0.96px] max-md:text-[40px]">
+          AI workspace for scientists,{" "}
+          <br />
+          students, and research teams
         </h1>
         
         <p className="text-neutral-900 text-base font-medium tracking-[-0.4px] mt-[17px] max-w-2xl mx-auto">
