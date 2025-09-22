@@ -11,22 +11,22 @@ export const AnimatedCompanies: React.FC = () => {
 
   const companySets: CompanySet[][] = [
     [
-      { name: 'Amazon', logo: '/assets/logos/amazon.png' },
-      { name: 'Biogen', logo: '/assets/logos/biogen.svg' },
-      { name: 'Reckitt', logo: '/assets/logos/reckitt.svg' },
-      { name: 'Goldman Sachs', logo: '/assets/logos/goldman-sachs.svg' },
-      { name: 'University of Cambridge', logo: '/assets/logos/cambridge.svg' },
-      { name: 'NVIDIA', logo: '/assets/logos/nvidia.svg' },
-      { name: 'MIT', logo: '/assets/logos/mit.svg' }
+      { name: 'Amazon', logo: 'https://logo.clearbit.com/amazon.com' },
+      { name: 'Biogen', logo: 'https://logo.clearbit.com/biogen.com' },
+      { name: 'Reckitt', logo: 'https://logo.clearbit.com/reckitt.com' },
+      { name: 'Goldman Sachs', logo: 'https://logo.clearbit.com/goldmansachs.com' },
+      { name: 'University of Cambridge', logo: 'https://logo.clearbit.com/cam.ac.uk' },
+      { name: 'NVIDIA', logo: 'https://logo.clearbit.com/nvidia.com' },
+      { name: 'MIT', logo: 'https://logo.clearbit.com/mit.edu' }
     ],
     [
-      { name: 'Caltech', logo: '/assets/logos/caltech.svg' },
-      { name: 'Roche', logo: '/assets/logos/roche.svg' },
-      { name: 'Meta', logo: '/assets/logos/meta.svg' },
-      { name: 'Kaiser Permanente', logo: '/assets/logos/kaiser-permanente.svg' },
-      { name: 'PWC', logo: '/assets/logos/pwc.svg' },
-      { name: 'GSK', logo: '/assets/logos/gsk.svg' },
-      { name: 'Stanford', logo: '/assets/logos/stanford.svg' }
+      { name: 'Caltech', logo: 'https://logo.clearbit.com/caltech.edu' },
+      { name: 'Roche', logo: 'https://logo.clearbit.com/roche.com' },
+      { name: 'Meta', logo: 'https://logo.clearbit.com/meta.com' },
+      { name: 'Kaiser Permanente', logo: 'https://logo.clearbit.com/kp.org' },
+      { name: 'PWC', logo: 'https://logo.clearbit.com/pwc.com' },
+      { name: 'GSK', logo: 'https://logo.clearbit.com/gsk.com' },
+      { name: 'Stanford', logo: 'https://logo.clearbit.com/stanford.edu' }
     ]
   ];
 
