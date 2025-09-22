@@ -39,9 +39,9 @@ export const Features: React.FC = () => {
       image: "https://api.builder.io/api/v1/image/assets/TEMP/d17249b7f45f154dddeb37defddb0ec9281f21d9?placeholderIfAbsent=true"
     },
     {
-      title: "Build a single, searchable library for all your projects",
+      title: <>Build a single, searchable<br />library for all your projects</>,
       altText: "Build a single, searchable library for all your projects",
-      description: "Whether working solo or collaborating with a team, Anara provides one organized place for all your scholarly work",
+      description: <>Whether working solo or collaborating with a team, Anara<br />provides one organized place for all your scholarly work</>,
       image: "https://api.builder.io/api/v1/image/assets/TEMP/069088bed1bf853b7a711b661f378f13bf7659b1?placeholderIfAbsent=true"
     }
   ];
