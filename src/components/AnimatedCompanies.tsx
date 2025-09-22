@@ -7,7 +7,8 @@ interface CompanySet {
 
 export const AnimatedCompanies: React.FC = () => {
   const [currentSet, setCurrentSet] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [currentLogos, setCurrentLogos] = useState<CompanySet[]>([]);
+  const [transitioningIndex, setTransitioningIndex] = useState<number | null>(null);
 
   const companySets: CompanySet[][] = [
     [
@@ -30,32 +31,54 @@ export const AnimatedCompanies: React.FC = () => {
     ]
   ];
 
+  // Initialize with first set
   useEffect(() => {
+    setCurrentLogos([...companySets[0]]);
+  }, []);
+
+  useEffect(() => {
+    let currentPosition = companySets[0].length - 1; // Start from rightmost (index 6)
+    let nextSetIndex = 1;
+
     const interval = setInterval(() => {
-      setIsTransitioning(true);
+      // Set transitioning state for current position
+      setTransitioningIndex(currentPosition);
       
       setTimeout(() => {
-        setCurrentSet((prev) => (prev + 1) % companySets.length);
-        setIsTransitioning(false);
-      }, 250);
-    }, 5000);
+        // Update the logo at current position
+        setCurrentLogos(prev => {
+          const newLogos = [...prev];
+          newLogos[currentPosition] = companySets[nextSetIndex][currentPosition];
+          return newLogos;
+        });
+        
+        // Clear transitioning state
+        setTransitioningIndex(null);
+        
+        // Move to next position (right to left)
+        currentPosition--;
+        
+        // If we've changed all logos in the set, prepare for next set
+        if (currentPosition < 0) {
+          currentPosition = companySets[0].length - 1;
+          nextSetIndex = (nextSetIndex + 1) % companySets.length;
+        }
+      }, 250); // 250ms transition time
+    }, 1000); // Change every 1 second
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="flex justify-center gap-[27px] mt-8 max-md:grid max-md:grid-cols-2 max-md:gap-4">
-      {companySets[currentSet].map((company, index) => (
+      {currentLogos.map((company, index) => (
         <div
-          key={`${currentSet}-${index}`}
+          key={`${company.name}-${index}`}
           className={`w-36 h-32 bg-gray-50 rounded-lg flex items-center justify-center p-4 transition-all duration-500 ${
-            isTransitioning 
+            transitioningIndex === index
               ? 'opacity-0 transform scale-95' 
               : 'opacity-100 transform scale-100 animate-fade-in'
           }`}
-          style={{
-            animationDelay: `${index * 100}ms`
-          }}
         >
           <img
             src={company.logo}
