@@ -1,24 +1,33 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import { AnimatedCompanies } from './AnimatedCompanies';
+import { useEntranceAnimation } from '@/hooks/useEntranceAnimation';
 
 export const Hero: React.FC = () => {
+  const isVisible = useEntranceAnimation();
+
   return (
     <section className="pt-[150px] pb-16 px-4">
       <div className="max-w-[1312px] mx-auto text-center">
-        <h1 className="font-perfectly-nineties font-[570] text-balance leading-[80px] text-[72px] max-w-[820px] tracking-[-0.96px] text-black mx-auto">
+        <h1 className={`font-perfectly-nineties font-[570] text-balance leading-[80px] text-[72px] max-w-[820px] tracking-[-0.96px] text-black mx-auto transition-all duration-600 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           AI workspace for scientists,{" "}
           <br />
           students, and research teams
         </h1>
         
-        <p className="font-inter text-secondary-foreground text-base font-medium tracking-[-0.4px] mt-7 max-w-[750px] mx-auto text-center leading-6 font-[500]">
+        <p className={`font-inter text-secondary-foreground text-base font-medium tracking-[-0.4px] mt-7 max-w-[750px] mx-auto text-center leading-6 font-[500] transition-all duration-600 ease-out delay-200 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           Search for papers, extract key passages, organize research
           <br />
           and create flashcards — all without sacrificing academic rigor
         </p>
 
-        <div className="flex justify-center gap-3.5 mt-9 max-md:flex-col max-md:items-center">
+        <div className={`flex justify-center gap-3.5 mt-9 max-md:flex-col max-md:items-center transition-all duration-600 ease-out delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <Button variant="primary" className="w-[143px]">
             Get Anara free
           </Button>
@@ -27,13 +36,21 @@ export const Hero: React.FC = () => {
           </Button>
         </div>
 
-        <p className="text-gray-500 text-sm font-medium leading-none tracking-[-0.4px] mt-[55px] max-md:mt-10">
+        <p className={`text-gray-500 text-sm font-medium leading-none tracking-[-0.4px] mt-[55px] max-md:mt-10 transition-all duration-600 ease-out delay-400 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           Trusted by 2,000,000+ researchers and students
         </p>
 
-        <AnimatedCompanies />
+        <div className={`transition-all duration-600 ease-out delay-500 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <AnimatedCompanies />
+        </div>
 
-        <div className="bg-gray-100 h-[666px] mt-9 rounded-xl flex items-center justify-center max-md:h-[400px]">
+        <div className={`bg-gray-100 h-[666px] mt-9 rounded-xl flex items-center justify-center max-md:h-[400px] transition-all duration-600 ease-out delay-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <div className="text-gray-400 text-lg">Product Demo Video</div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 export const Testimonials: React.FC = () => {
+  const { elementRef, isVisible } = useIntersectionObserver();
   const testimonials = [
     [
       {
@@ -78,13 +80,17 @@ export const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section ref={elementRef} className="py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] text-center mb-14 max-md:text-3xl max-md:mb-10">
+        <h2 className={`font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] text-center mb-14 max-md:text-3xl max-md:mb-10 transition-all duration-600 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           What people are saying
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-5 max-md:grid-cols-1">
+        <div className={`grid md:grid-cols-4 gap-5 max-md:grid-cols-1 transition-all duration-600 ease-out delay-200 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           {testimonials.map((column, columnIndex) => (
             <div key={columnIndex} className="space-y-4">
               {column.map((testimonial, index) => (

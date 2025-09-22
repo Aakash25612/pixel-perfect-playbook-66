@@ -1,6 +1,9 @@
 import React from 'react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 export const Features: React.FC = () => {
+  const { elementRef: featuresRef, isVisible: featuresVisible } = useIntersectionObserver();
+  const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver();
   const features = [
     {
       image: "https://api.builder.io/api/v1/image/assets/TEMP/b155b43a7569a17b97cd1de4dfc0891693164460?placeholderIfAbsent=true",
@@ -55,12 +58,16 @@ export const Features: React.FC = () => {
 
   return (
     <div className="py-16">
-      <section className="max-w-6xl mx-auto px-4">
-        <h2 className="font-perfectly-nineties font-[550] text-black text-[56px] leading-[50px] tracking-[-0.32px] text-center pb-4 max-md:text-3xl max-md:mb-10">
+      <section ref={featuresRef} className="max-w-6xl mx-auto px-4">
+        <h2 className={`font-perfectly-nineties font-[550] text-black text-[56px] leading-[50px] tracking-[-0.32px] text-center pb-4 max-md:text-3xl max-md:mb-10 transition-all duration-600 ease-out ${
+          featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           Built specifically for academic workflows
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-32">
+        <div className={`grid md:grid-cols-3 gap-8 mb-32 transition-all duration-600 ease-out delay-200 ${
+          featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           {features.map((feature, index) => (
             <article key={index} className="text-center">
               <img
@@ -79,31 +86,19 @@ export const Features: React.FC = () => {
         </div>
 
         {workflowFeatures.map((feature, index) => (
-          <section key={index} className="mb-[276px] max-md:mb-20">
-            <div className="text-center mb-14 max-md:mb-10">
-              <h2 className="font-perfectly-nineties font-[550] text-black text-[56px] leading-[60px] tracking-[-0.32px] max-w-[672px] pb-4 mx-auto max-md:text-3xl">
-                {feature.title}
-              </h2>
-              <p className="text-gray-600 text-base font-medium max-w-[672px] mx-auto leading-6 text-center">
-                {feature.description}
-              </p>
-            </div>
-            <div className="bg-gray-100 rounded-xl p-14 max-md:p-5">
-              <img
-                src={feature.image}
-                alt={feature.altText}
-                className="aspect-[1.8] object-contain w-full rounded-[20px_20px_0px_0px]"
-              />
-            </div>
-          </section>
+          <WorkflowFeature key={index} feature={feature} index={index} />
         ))}
 
-        <section className="text-center mb-32">
-          <h2 className="font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] mb-14 max-md:text-3xl max-md:mb-10">
+        <section ref={statsRef} className="text-center mb-32">
+          <h2 className={`font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] mb-14 max-md:text-3xl max-md:mb-10 transition-all duration-600 ease-out ${
+            statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             Trusted by millions
           </h2>
           
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className={`grid md:grid-cols-4 gap-4 transition-all duration-600 ease-out delay-200 ${
+            statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             {stats.map((stat, index) => (
               <div key={index} className="bg-gray-100 p-8 rounded-2xl text-left">
                 <div className="text-base font-normal leading-none text-gray-600 mb-4">
@@ -118,5 +113,33 @@ export const Features: React.FC = () => {
         </section>
       </section>
     </div>
+  );
+};
+
+const WorkflowFeature: React.FC<{ feature: any; index: number }> = ({ feature }) => {
+  const { elementRef, isVisible } = useIntersectionObserver();
+
+  return (
+    <section ref={elementRef} className="mb-[276px] max-md:mb-20">
+      <div className={`text-center mb-14 max-md:mb-10 transition-all duration-600 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
+        <h2 className="font-perfectly-nineties font-[550] text-black text-[56px] leading-[60px] tracking-[-0.32px] max-w-[672px] pb-4 mx-auto max-md:text-3xl">
+          {feature.title}
+        </h2>
+        <p className="text-gray-600 text-base font-medium max-w-[672px] mx-auto leading-6 text-center">
+          {feature.description}
+        </p>
+      </div>
+      <div className={`bg-gray-100 rounded-xl p-14 max-md:p-5 transition-all duration-600 ease-out delay-300 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
+        <img
+          src={feature.image}
+          alt={feature.altText}
+          className="aspect-[1.8] object-contain w-full rounded-[20px_20px_0px_0px]"
+        />
+      </div>
+    </section>
   );
 };
