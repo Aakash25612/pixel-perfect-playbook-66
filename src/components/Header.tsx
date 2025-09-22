@@ -5,7 +5,7 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white/90 backdrop-blur-sm z-10 fixed top-0 left-0 right-0">
+    <header className="bg-white/90 backdrop-blur-sm z-50 fixed top-0 left-0 right-0 w-full">
       <div className="flex w-full max-w-[1425px] mx-auto items-center text-sm font-medium tracking-[-0.32px] leading-none px-[70px] py-4 max-md:px-5">
         <div className="flex w-full max-w-[1158px] mx-auto items-center gap-5 justify-between">
           <img
