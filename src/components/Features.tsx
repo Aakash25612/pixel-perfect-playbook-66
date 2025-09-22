@@ -33,9 +33,9 @@ export const Features: React.FC = () => {
       image: "https://api.builder.io/api/v1/image/assets/TEMP/065eb60eac00bb375691563fd74ca26e89d272d5?placeholderIfAbsent=true"
     },
     {
-      title: "Generate flashcards and multiple choice questions",
+      title: <>Generate flashcards and<br />multiple choice questions</>,
       altText: "Generate flashcards and multiple choice questions",
-      description: "Upload lecture slides, textbooks, or videos, and Anara will create flashcards and practice quizzes tailored to your specific materials",
+      description: <>Upload lecture slides, textbooks, or videos, and Anara will create<br />flashcards and practice quizzes tailored to your specific materials</>,
       image: "https://api.builder.io/api/v1/image/assets/TEMP/d17249b7f45f154dddeb37defddb0ec9281f21d9?placeholderIfAbsent=true"
     },
     {
