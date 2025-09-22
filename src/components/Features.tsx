@@ -27,9 +27,9 @@ export const Features: React.FC = () => {
       image: "https://api.builder.io/api/v1/image/assets/TEMP/448af277074f66a5f2a680fed3cacd8ffcbdb971?placeholderIfAbsent=true"
     },
     {
-      title: "Get concise, scholarly answers to any question",
+      title: <>Get concise, scholarly<br />answers to any question</>,
       altText: "Get concise, scholarly answers to any question",
-      description: "When you ask a question, Anara searches major academic databases like PubMed, arXiv and JSTOR to deliver a comprehensive response",
+      description: <>When you ask a question, Anara searches major academic databases<br />like PubMed, arXiv and JSTOR to deliver a comprehensive response</>,
       image: "https://api.builder.io/api/v1/image/assets/TEMP/065eb60eac00bb375691563fd74ca26e89d272d5?placeholderIfAbsent=true"
     },
     {
