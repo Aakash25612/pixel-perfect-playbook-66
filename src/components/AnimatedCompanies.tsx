@@ -12,21 +12,21 @@ export const AnimatedCompanies: React.FC = () => {
   const companySets: CompanySet[][] = [
     [
       { name: 'Amazon', logo: 'https://logo.clearbit.com/amazon.com' },
-      { name: 'Biogen', logo: 'https://logo.clearbit.com/biogen.com' },
+      { name: 'Caltech', logo: 'https://logo.clearbit.com/caltech.edu' },
+      { name: 'Kaiser Permanente', logo: 'https://logo.clearbit.com/kp.org' },
+      { name: 'Meta', logo: 'https://logo.clearbit.com/meta.com' },
+      { name: 'Stanford', logo: 'https://logo.clearbit.com/stanford.edu' },
       { name: 'Reckitt', logo: 'https://logo.clearbit.com/reckitt.com' },
-      { name: 'Goldman Sachs', logo: 'https://logo.clearbit.com/goldmansachs.com' },
-      { name: 'University of Cambridge', logo: 'https://logo.clearbit.com/cam.ac.uk' },
-      { name: 'NVIDIA', logo: 'https://logo.clearbit.com/nvidia.com' },
-      { name: 'MIT', logo: 'https://logo.clearbit.com/mit.edu' }
+      { name: 'Biogen', logo: 'https://logo.clearbit.com/biogen.com' }
     ],
     [
-      { name: 'Caltech', logo: 'https://logo.clearbit.com/caltech.edu' },
-      { name: 'Roche', logo: 'https://logo.clearbit.com/roche.com' },
-      { name: 'Meta', logo: 'https://logo.clearbit.com/meta.com' },
-      { name: 'Kaiser Permanente', logo: 'https://logo.clearbit.com/kp.org' },
+      { name: 'NVIDIA', logo: 'https://logo.clearbit.com/nvidia.com' },
+      { name: 'University of Cambridge', logo: 'https://logo.clearbit.com/cam.ac.uk' },
       { name: 'PWC', logo: 'https://logo.clearbit.com/pwc.com' },
+      { name: 'Goldman Sachs', logo: 'https://logo.clearbit.com/goldmansachs.com' },
+      { name: 'MIT', logo: 'https://logo.clearbit.com/mit.edu' },
       { name: 'GSK', logo: 'https://logo.clearbit.com/gsk.com' },
-      { name: 'Stanford', logo: 'https://logo.clearbit.com/stanford.edu' }
+      { name: 'Roche', logo: 'https://logo.clearbit.com/roche.com' }
     ]
   ];
 
