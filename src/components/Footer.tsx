@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
             alt="Anara Icon"
             className="w-10 h-10 mx-auto mb-2.5"
           />
-          <h2 className="text-black text-[54px] font-semibold leading-none tracking-[-0.4px] mb-4 max-md:text-[40px]">
+          <h2 className="font-perfectly-nineties font-[570] text-black text-[54px] leading-none tracking-[-0.96px] mb-4 max-md:text-[40px]">
             Where people and AI do research work together
           </h2>
           <p className="text-neutral-900 text-base font-medium tracking-[-0.4px] mb-9 max-w-2xl mx-auto">

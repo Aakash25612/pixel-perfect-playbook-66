@@ -52,7 +52,7 @@ export const Features: React.FC = () => {
   return (
     <div className="py-16">
       <section className="max-w-6xl mx-auto px-4">
-        <h2 className="text-black text-[41px] font-semibold leading-none tracking-[-0.32px] text-center mb-[72px] max-md:text-3xl max-md:mb-10">
+        <h2 className="font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] text-center mb-[72px] max-md:text-3xl max-md:mb-10">
           Built specifically for academic workflows
         </h2>
 
@@ -77,7 +77,7 @@ export const Features: React.FC = () => {
         {workflowFeatures.map((feature, index) => (
           <section key={index} className="mb-[276px] max-md:mb-20">
             <div className="text-center mb-14 max-md:mb-10">
-              <h2 className="text-black text-[41px] font-semibold leading-none tracking-[-0.32px] mb-4 max-md:text-3xl">
+              <h2 className="font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] mb-4 max-md:text-3xl">
                 {feature.title}
               </h2>
               <p className="text-gray-600 text-base font-medium max-w-2xl mx-auto">
@@ -95,7 +95,7 @@ export const Features: React.FC = () => {
         ))}
 
         <section className="text-center mb-32">
-          <h2 className="text-black text-[41px] font-semibold leading-none tracking-[-0.32px] mb-14 max-md:text-3xl max-md:mb-10">
+          <h2 className="font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] mb-14 max-md:text-3xl max-md:mb-10">
             Trusted by millions
           </h2>
           

@@ -80,7 +80,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section className="py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-black text-[41px] font-semibold leading-none tracking-[-0.32px] text-center mb-14 max-md:text-3xl max-md:mb-10">
+        <h2 className="font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] text-center mb-14 max-md:text-3xl max-md:mb-10">
           What people are saying
         </h2>
 
