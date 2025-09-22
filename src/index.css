@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'PerfectlyNinetiesFont';
+  src: url('/perfectly-nineties-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @keyframes fade-in-stagger {
   0% {
     opacity: 0;
