@@ -8,6 +8,7 @@ interface CompanySet {
 export const AnimatedCompanies: React.FC = () => {
   const [currentSet, setCurrentSet] = useState(0);
   const [currentLogos, setCurrentLogos] = useState<CompanySet[]>([]);
+  const [nextLogos, setNextLogos] = useState<CompanySet[]>([]);
   const [transitioningIndex, setTransitioningIndex] = useState<number | null>(null);
 
   const companySets: CompanySet[][] = [
@@ -34,6 +35,7 @@ export const AnimatedCompanies: React.FC = () => {
   // Initialize with first set
   useEffect(() => {
     setCurrentLogos([...companySets[0]]);
+    setNextLogos([...companySets[1]]);
   }, []);
 
   useEffect(() => {
@@ -41,11 +43,18 @@ export const AnimatedCompanies: React.FC = () => {
     let nextSetIndex = 1;
 
     const interval = setInterval(() => {
+      // Prepare the next logo before transition
+      setNextLogos(prev => {
+        const newLogos = [...prev];
+        newLogos[currentPosition] = companySets[nextSetIndex][currentPosition];
+        return newLogos;
+      });
+
       // Set transitioning state for current position
       setTransitioningIndex(currentPosition);
       
       setTimeout(() => {
-        // Update the logo at current position
+        // Update the current logo to the next one
         setCurrentLogos(prev => {
           const newLogos = [...prev];
           newLogos[currentPosition] = companySets[nextSetIndex][currentPosition];
@@ -62,8 +71,10 @@ export const AnimatedCompanies: React.FC = () => {
         if (currentPosition < 0) {
           currentPosition = companySets[0].length - 1;
           nextSetIndex = (nextSetIndex + 1) % companySets.length;
+          // Update nextLogos to the next set
+          setNextLogos([...companySets[nextSetIndex]]);
         }
-      }, 250); // 250ms transition time
+      }, 300); // 300ms transition time
     }, 1000); // Change every 1 second
 
     return () => clearInterval(interval);
@@ -73,29 +84,52 @@ export const AnimatedCompanies: React.FC = () => {
     <div className="flex justify-center gap-[27px] mt-8 max-md:grid max-md:grid-cols-2 max-md:gap-4">
       {currentLogos.map((company, index) => (
         <div
-          key={`${company.name}-${index}`}
-          className={`w-36 h-32 bg-gray-50 rounded-lg flex items-center justify-center p-4 transition-all duration-500 ${
-            transitioningIndex === index
-              ? 'opacity-0 transform scale-95' 
-              : 'opacity-100 transform scale-100 animate-fade-in'
-          }`}
+          key={`container-${index}`}
+          className="w-36 h-32 bg-gray-50 rounded-lg flex items-center justify-center p-4 relative"
         >
-          <img
-            src={company.logo}
-            alt={`${company.name} logo`}
-            className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              const parent = target.parentElement;
-              if (parent) {
-                const textElement = document.createElement('div');
-                textElement.className = 'text-gray-600 text-sm font-medium text-center';
-                textElement.textContent = company.name;
-                parent.appendChild(textElement);
-              }
-            }}
-          />
+          {/* Current logo */}
+          <div className={`absolute inset-4 flex items-center justify-center transition-opacity duration-300 ${
+            transitioningIndex === index ? 'opacity-0' : 'opacity-100'
+          }`}>
+            <img
+              src={company.logo}
+              alt={`${company.name} logo`}
+              className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  const textElement = document.createElement('div');
+                  textElement.className = 'text-gray-600 text-sm font-medium text-center';
+                  textElement.textContent = company.name;
+                  parent.appendChild(textElement);
+                }
+              }}
+            />
+          </div>
+          
+          {/* Next logo (only visible during transition) */}
+          {transitioningIndex === index && nextLogos[index] && (
+            <div className="absolute inset-4 flex items-center justify-center transition-opacity duration-300 opacity-100">
+              <img
+                src={nextLogos[index].logo}
+                alt={`${nextLogos[index].name} logo`}
+                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    const textElement = document.createElement('div');
+                    textElement.className = 'text-gray-600 text-sm font-medium text-center';
+                    textElement.textContent = nextLogos[index].name;
+                    parent.appendChild(textElement);
+                  }
+                }}
+              />
+            </div>
+          )}
         </div>
       ))}
     </div>
