@@ -52,7 +52,7 @@ export const Features: React.FC = () => {
   return (
     <div className="py-16">
       <section className="max-w-6xl mx-auto px-4">
-        <h2 className="font-perfectly-nineties font-[570] text-black text-[41px] leading-none tracking-[-0.96px] text-center mb-[72px] max-md:text-3xl max-md:mb-10">
+        <h2 className="font-perfectly-nineties font-[550] text-black text-[56px] leading-[50px] tracking-[-0.32px] text-center pb-4 max-md:text-3xl max-md:mb-10">
           Built specifically for academic workflows
         </h2>
 
