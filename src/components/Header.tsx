@@ -6,15 +6,15 @@ export const Header: React.FC = () => {
 
   return (
     <header className="bg-white/90 backdrop-blur-sm z-50 fixed top-0 left-0 right-0 w-full">
-      <div className="flex w-full max-w-[1425px] mx-auto items-start text-sm font-medium tracking-[-0.32px] leading-none px-[70px] max-md:px-5">
-        <div className="flex w-full max-w-[1158px] mx-auto items-start gap-5 justify-between">
+      <div className="flex w-full max-w-[1425px] mx-auto items-center text-sm font-medium tracking-[-0.32px] leading-none px-[70px] py-0.5 max-md:px-5">
+        <div className="flex w-full max-w-[1158px] mx-auto items-center gap-5 justify-between">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/c622229a382a8d0a5434c0749f005d4cfcbe9597?placeholderIfAbsent=true"
             alt="Anara Logo"
-            className="aspect-[0.46] object-contain w-12 shrink-0"
+            className="aspect-[0.46] object-contain w-16 shrink-0"
           />
           
-          <nav className="hidden md:flex items-stretch gap-[22px] text-black mt-1">
+          <nav className="hidden md:flex items-stretch gap-[22px] text-black">
             <div className="flex items-stretch gap-1 cursor-pointer hover:text-gray-600">
               <span>Use cases</span>
               <img
@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
             </div>
           </nav>
 
-          <div className="flex gap-2.5">
+          <div className="flex min-h-8 gap-2.5">
             <Button variant="secondary" size="sm" className="w-[63px]">
               Log in
             </Button>
