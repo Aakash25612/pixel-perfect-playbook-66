@@ -23,8 +23,8 @@ export const AnimatedCompanies: React.FC = () => {
       { name: 'NVIDIA', logo: '/logos/nvidia.png' },
       { name: 'University of Cambridge', logo: '/logos/cambridge.png' },
       { name: 'PWC', logo: 'https://logo.clearbit.com/pwc.com' },
-      { name: 'Goldman Sachs', logo: 'https://logo.clearbit.com/goldmansachs.com' },
-      { name: 'MIT', logo: 'https://logo.clearbit.com/mit.edu' },
+      { name: 'Goldman Sachs', logo: '/logos/goldman-sachs.png' },
+      { name: 'MIT', logo: '/logos/mit.png' },
       { name: 'GSK', logo: '/logos/gsk.png' },
       { name: 'Roche', logo: 'https://logo.clearbit.com/roche.com' }
     ]
