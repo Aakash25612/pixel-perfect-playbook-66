@@ -54,7 +54,7 @@ export const AnimatedCompanies: React.FC = () => {
               : 'opacity-100 transform scale-100 animate-fade-in'
           }`}
           style={{
-            animationDelay: `${(companySets[currentSet].length - 1 - index) * 1500}ms`
+            animationDelay: `${index * 100}ms`
           }}
         >
           <img
