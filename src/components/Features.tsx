@@ -23,7 +23,7 @@ export const Features: React.FC = () => {
     {
       title: <>Understand any file or<br />group of files, instantly</>,
       altText: "Understand any file or group of files, instantly",
-      description: "Whether it's a dense 200-page textbook, a new clinical study, or a technical research paper, just upload it and start asking questions",
+      description: <>Whether it's a dense 200-page textbook, a new clinical study, or a<br />technical research paper, just upload it and start asking questions</>,
       image: "https://api.builder.io/api/v1/image/assets/TEMP/448af277074f66a5f2a680fed3cacd8ffcbdb971?placeholderIfAbsent=true"
     },
     {
