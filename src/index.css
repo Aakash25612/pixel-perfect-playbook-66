@@ -5,9 +5,10 @@
 @font-face {
   font-family: 'PerfectlyNinetiesFont';
   src: url('/perfectly-nineties-regular.otf') format('opentype');
-  font-weight: normal;
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
+  font-synthesis: weight;
 }
 
 @keyframes fade-in-stagger {
