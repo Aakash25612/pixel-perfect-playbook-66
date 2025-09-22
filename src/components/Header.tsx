@@ -6,7 +6,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="bg-white/90 backdrop-blur-sm z-50 fixed top-0 left-0 right-0 w-full">
-      <div className="flex w-full max-w-[1425px] mx-auto items-center text-sm font-medium tracking-[-0.32px] leading-none px-[70px] py-2 max-md:px-5">
+      <div className="flex w-full max-w-[1425px] mx-auto items-center text-sm font-medium tracking-[-0.32px] leading-none px-[70px] py-1 max-md:px-5">
         <div className="flex w-full max-w-[1158px] mx-auto items-center gap-5 justify-between">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/c622229a382a8d0a5434c0749f005d4cfcbe9597?placeholderIfAbsent=true"
