@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
           students, and research teams
         </h1>
         
-        <p className="text-neutral-900 text-base font-medium tracking-[-0.4px] mt-[17px] max-w-2xl mx-auto">
+        <p className="text-neutral-900 text-base font-medium tracking-[-0.4px] mt-4 max-w-[750px] mx-auto text-center leading-6 font-[500]">
           Search for papers, extract key passages, organize research{" "}
           and create flashcards — all without sacrificing academic rigor
         </p>
