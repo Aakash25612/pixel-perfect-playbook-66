@@ -9,9 +9,9 @@ export const Header: React.FC = () => {
       <div className="flex w-full max-w-[1425px] mx-auto items-start text-sm font-medium tracking-[-0.32px] leading-none px-[70px] max-md:px-5">
         <div className="flex w-full max-w-[1158px] mx-auto items-start gap-5 justify-between">
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/c622229a382a8d0a5434c0749f005d4cfcbe9597?placeholderIfAbsent=true"
+            src="/anara-logo.png"
             alt="Anara Logo"
-            className="aspect-[0.46] object-top object-contain w-12 h-6 shrink-0"
+            className="object-top object-contain w-12 h-6 shrink-0"
           />
           
           <nav className="hidden md:flex items-stretch gap-[22px] text-black">
