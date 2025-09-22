@@ -21,22 +21,26 @@ export const Features: React.FC = () => {
 
   const workflowFeatures = [
     {
-      title: "Understand any file or group of files, instantly",
+      title: <>Understand any file or<br />group of files, instantly</>,
+      altText: "Understand any file or group of files, instantly",
       description: "Whether it's a dense 200-page textbook, a new clinical study, or a technical research paper, just upload it and start asking questions",
       image: "https://api.builder.io/api/v1/image/assets/TEMP/448af277074f66a5f2a680fed3cacd8ffcbdb971?placeholderIfAbsent=true"
     },
     {
       title: "Get concise, scholarly answers to any question",
+      altText: "Get concise, scholarly answers to any question",
       description: "When you ask a question, Anara searches major academic databases like PubMed, arXiv and JSTOR to deliver a comprehensive response",
       image: "https://api.builder.io/api/v1/image/assets/TEMP/065eb60eac00bb375691563fd74ca26e89d272d5?placeholderIfAbsent=true"
     },
     {
       title: "Generate flashcards and multiple choice questions",
+      altText: "Generate flashcards and multiple choice questions",
       description: "Upload lecture slides, textbooks, or videos, and Anara will create flashcards and practice quizzes tailored to your specific materials",
       image: "https://api.builder.io/api/v1/image/assets/TEMP/d17249b7f45f154dddeb37defddb0ec9281f21d9?placeholderIfAbsent=true"
     },
     {
       title: "Build a single, searchable library for all your projects",
+      altText: "Build a single, searchable library for all your projects",
       description: "Whether working solo or collaborating with a team, Anara provides one organized place for all your scholarly work",
       image: "https://api.builder.io/api/v1/image/assets/TEMP/069088bed1bf853b7a711b661f378f13bf7659b1?placeholderIfAbsent=true"
     }
@@ -87,7 +91,7 @@ export const Features: React.FC = () => {
             <div className="bg-gray-100 rounded-xl p-14 max-md:p-5">
               <img
                 src={feature.image}
-                alt={feature.title}
+                alt={feature.altText}
                 className="aspect-[1.8] object-contain w-full rounded-[20px_20px_0px_0px]"
               />
             </div>
