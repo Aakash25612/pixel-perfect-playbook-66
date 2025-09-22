@@ -77,7 +77,7 @@ export const Features: React.FC = () => {
         {workflowFeatures.map((feature, index) => (
           <section key={index} className="mb-[276px] max-md:mb-20">
             <div className="text-center mb-14 max-md:mb-10">
-              <h2 className="font-perfectly-nineties font-[550] text-black text-[56px] leading-[60px] tracking-[-0.32px] text-center text-balance max-w-2xl pb-4 mx-auto max-md:text-3xl">
+              <h2 className="font-perfectly-nineties font-[550] text-black text-[56px] leading-[60px] tracking-[-0.32px] max-w-2xl pb-4 mx-auto max-md:text-3xl">
                 {feature.title}
               </h2>
               <p className="text-gray-600 text-base font-medium max-w-2xl mx-auto leading-6 text-center">
