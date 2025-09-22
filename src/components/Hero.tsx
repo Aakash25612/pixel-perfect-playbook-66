@@ -6,7 +6,7 @@ export const Hero: React.FC = () => {
   return (
     <section className="pt-[150px] pb-16 px-4">
       <div className="max-w-[1312px] mx-auto text-center">
-        <h1 className="text-black text-[53px] font-semibold leading-loose tracking-[-0.96px] max-md:text-[40px]">
+        <h1 className="font-perfectlyNineties font-[550] text-balance text-center mx-auto leading-[80px] text-[72px] max-w-[820px] tracking-[-0.96px] text-black">
           AI workspace for scientists,{" "}
           <br />
           students, and research teams
