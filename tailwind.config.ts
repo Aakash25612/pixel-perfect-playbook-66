@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'perfectly-nineties': ['Playfair Display', 'serif'],
+        'perfectly-nineties': ['EB Garamond', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

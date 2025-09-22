@@ -117,4 +117,9 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  h1 {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
