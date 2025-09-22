@@ -10,6 +10,8 @@ export const AnimatedCompanies: React.FC = () => {
   const [currentLogos, setCurrentLogos] = useState<CompanySet[]>([]);
   const [nextLogos, setNextLogos] = useState<CompanySet[]>([]);
   const [transitioningIndex, setTransitioningIndex] = useState<number | null>(null);
+  const [currentPosition, setCurrentPosition] = useState(6); // Start from rightmost (index 6)
+  const [nextSetIndex, setNextSetIndex] = useState(1);
 
   const companySets: CompanySet[][] = [
     [
@@ -39,9 +41,6 @@ export const AnimatedCompanies: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    let currentPosition = companySets[0].length - 1; // Start from rightmost (index 6)
-    let nextSetIndex = 1;
-
     const interval = setInterval(() => {
       // Prepare the next logo before transition
       setNextLogos(prev => {
@@ -65,20 +64,27 @@ export const AnimatedCompanies: React.FC = () => {
         setTransitioningIndex(null);
         
         // Move to next position (right to left)
-        currentPosition--;
-        
-        // If we've changed all logos in the set, prepare for next set
-        if (currentPosition < 0) {
-          currentPosition = companySets[0].length - 1;
-          nextSetIndex = (nextSetIndex + 1) % companySets.length;
-          // Update nextLogos to the next set
-          setNextLogos([...companySets[nextSetIndex]]);
-        }
+        setCurrentPosition(prevPosition => {
+          const newPosition = prevPosition - 1;
+          
+          // If we've changed all logos in the set, prepare for next set
+          if (newPosition < 0) {
+            setNextSetIndex(prevNextSetIndex => {
+              const newNextSetIndex = (prevNextSetIndex + 1) % companySets.length;
+              // Update nextLogos to the next set
+              setNextLogos([...companySets[newNextSetIndex]]);
+              return newNextSetIndex;
+            });
+            return companySets[0].length - 1; // Reset to rightmost position
+          }
+          
+          return newPosition;
+        });
       }, 300); // 300ms transition time
     }, 1000); // Change every 1 second
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentPosition, nextSetIndex]);
 
   return (
     <div className="flex justify-center gap-[27px] mt-8 max-md:grid max-md:grid-cols-2 max-md:gap-4">
