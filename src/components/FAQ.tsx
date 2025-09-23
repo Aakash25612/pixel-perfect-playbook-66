@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Plus, Minus } from 'lucide-react';
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -48,18 +49,19 @@ export const FAQ: React.FC = () => {
             {faqs.map((faq, index) => (
               <div key={index} className="border-b border-gray-200 last:border-b-0">
                 <button
-                  className="flex items-center gap-1.5 w-full py-8 text-left text-lg font-medium leading-none text-black hover:text-gray-600 transition-colors"
+                  className="group flex items-center text-start w-full gap-4 px-6 font-medium transition-all rounded-4 justify-between text-lg py-0 leading-[22px] text-black hover:text-gray-600"
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={openIndex === index}
                 >
-                  <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/9d05c8fe4505748968e646a43a69c5cf9604a6d8?placeholderIfAbsent=true"
-                    alt=""
-                    className={`w-4 h-4 transition-transform ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                  <span className="flex-1">{faq.question}</span>
+                  <div className="flex items-center gap-3">
+                    <Plus className={`h-7 w-7 shrink-0 transition-transform duration-200 ${
+                      openIndex === index ? 'hidden' : 'block'
+                    }`} />
+                    <Minus className={`h-7 w-7 shrink-0 transition-transform duration-200 ${
+                      openIndex === index ? 'block' : 'hidden'
+                    }`} />
+                    <span className="flex-1">{faq.question}</span>
+                  </div>
                 </button>
                 
                 {openIndex === index && (
