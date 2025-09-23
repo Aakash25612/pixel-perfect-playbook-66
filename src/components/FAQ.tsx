@@ -39,8 +39,8 @@ export const FAQ: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-[180px] max-md:gap-16">
           <div>
-            <h2 className="font-perfectly-nineties font-[570] text-black text-4xl leading-[1.4] tracking-[-0.96px] max-md:text-3xl">
-              Frequently Asked Questions
+            <h2 className="font-perfectly-nineties font-[550] text-black text-[48px] leading-[50px] tracking-[-0.32px] mb-14 max-w-[388px] w-[388px] max-md:text-3xl">
+              Frequently Asked<br />Questions
             </h2>
           </div>
 
