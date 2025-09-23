@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/c622229a382a8d0a5434c0749f005d4cfcbe9597?placeholderIfAbsent=true"
             alt="Anara Logo"
-            className="aspect-[0.46] object-contain w-12 shrink-0"
+            className="aspect-[0.46] object-contain w-[64px] shrink-0"
           />
           
           <nav className="hidden md:flex items-stretch gap-[22px] text-black">
