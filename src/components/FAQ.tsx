@@ -48,7 +48,7 @@ export const FAQ: React.FC = () => {
             {faqs.map((faq, index) => (
               <div key={index} className="border-b border-gray-200 last:border-b-0">
                 <button
-                  className="flex items-center gap-1.5 w-full py-8 text-left text-[20px] font-semibold leading-none text-black hover:text-gray-600 transition-colors"
+                  className="flex items-center gap-1.5 w-full py-8 text-left text-lg font-medium leading-none text-black hover:text-gray-600 transition-colors"
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={openIndex === index}
                 >
@@ -59,7 +59,7 @@ export const FAQ: React.FC = () => {
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
-                  <span className="flex-1 font-semibold text-[20px] leading-[28px] tracking-[-0.32px] antialiased">{faq.question}</span>
+                  <span className="flex-1">{faq.question}</span>
                 </button>
                 
                 {openIndex === index && (
