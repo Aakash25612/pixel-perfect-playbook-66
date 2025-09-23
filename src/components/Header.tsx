@@ -6,8 +6,8 @@ export const Header: React.FC = () => {
 
   return (
     <header className="bg-white/90 backdrop-blur-sm z-50 fixed top-0 left-0 right-0 w-full">
-      <div className="flex w-full max-w-[1425px] mx-auto items-center text-sm font-medium tracking-[-0.32px] leading-none px-[70px] py-0.5 max-md:px-5">
-        <div className="flex w-full max-w-[1158px] mx-auto items-center gap-5 justify-between">
+      <div className="flex w-full max-w-[1280px] mx-auto items-center text-sm font-medium tracking-[-0.32px] leading-none px-9 md:px-13 lg:px-16 py-0.5">
+        <div className="flex w-full items-center gap-5 justify-between">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/c622229a382a8d0a5434c0749f005d4cfcbe9597?placeholderIfAbsent=true"
             alt="Anara Logo"
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-5 py-4">
+        <div className="md:hidden bg-white border-t border-gray-200 px-9 md:px-13 lg:px-16 py-4">
           <nav className="flex flex-col gap-4">
             <a href="#use-cases" className="text-black hover:text-gray-600">Use cases</a>
             <a href="#resources" className="text-black hover:text-gray-600">Resources</a>

@@ -7,8 +7,8 @@ export const Hero: React.FC = () => {
   const isVisible = useEntranceAnimation();
 
   return (
-    <section className="pt-[150px] pb-16 px-4">
-      <div className="max-w-[1312px] mx-auto text-center">
+    <section className="pt-[150px] pb-16 w-full">
+      <div className="w-full text-center">
         <h1 className={`font-perfectly-nineties font-[570] text-balance leading-[80px] text-[72px] max-w-[820px] tracking-[-0.96px] text-black mx-auto transition-all duration-800 ease-out hover-lift ${
           isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
         }`}>

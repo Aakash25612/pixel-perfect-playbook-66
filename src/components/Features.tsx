@@ -57,8 +57,8 @@ export const Features: React.FC = () => {
   ];
 
   return (
-    <div className="py-16">
-      <section ref={featuresRef} className="max-w-6xl mx-auto px-4">
+    <div className="py-16 w-full">
+      <section ref={featuresRef} className="w-full">
         <h2 className={`font-perfectly-nineties font-[550] text-black text-[56px] leading-[50px] tracking-[-0.32px] text-center pb-4 max-md:text-3xl max-md:mb-10 transition-all duration-600 ease-out ${
           featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>

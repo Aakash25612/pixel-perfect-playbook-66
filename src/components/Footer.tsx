@@ -26,8 +26,8 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <footer className="bg-white w-full">
+      <div className="max-w-[1280px] mx-auto px-9 md:px-13 lg:px-16">
         {/* CTA Section */}
         <section className="text-center py-24 max-md:py-16">
           <img
