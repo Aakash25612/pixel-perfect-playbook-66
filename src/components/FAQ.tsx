@@ -59,7 +59,7 @@ export const FAQ: React.FC = () => {
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
-                  <span className="flex-1">{faq.question}</span>
+                  <span className="flex-1 font-semibold text-[20px] leading-[28px] tracking-[-0.32px] antialiased">{faq.question}</span>
                 </button>
                 
                 {openIndex === index && (
