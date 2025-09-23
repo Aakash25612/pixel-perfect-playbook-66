@@ -1,144 +1,190 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface CompanySet {
   name: string;
   logo: string;
 }
 
-export const AnimatedCompanies: React.FC = () => {
-  const [currentSet, setCurrentSet] = useState(0);
-  const [currentLogos, setCurrentLogos] = useState<CompanySet[]>([]);
-  const [nextLogos, setNextLogos] = useState<CompanySet[]>([]);
-  const [transitioningIndex, setTransitioningIndex] = useState<number | null>(null);
-  const [currentPosition, setCurrentPosition] = useState(6); // Start from rightmost (index 6)
-  const [nextSetIndex, setNextSetIndex] = useState(1);
+const CARD_COUNT = 7;
+const ANIMATION_DURATION = 0.6; // seconds (make a bit longer for smoothness)
+const STAGGER_PER_CARD = 0.08; // seconds, adjust as desired
+const SHOW_DURATION = 4; // seconds for each image
 
+// Card component for a single logo card with Framer Motion animation
+const AnimatedLogoCard: React.FC<{
+  current: CompanySet;
+  next: CompanySet;
+  isShowingNext: boolean;
+  index: number;
+}> = ({ current, next, isShowingNext, index }) => {
+  // Helper for fallback text on image error
+  const handleImgError = (
+    e: React.SyntheticEvent<HTMLImageElement>,
+    name: string
+  ) => {
+    const target = e.target as HTMLImageElement;
+    target.style.display = "none";
+    const parent = target.parentElement;
+    if (parent) {
+      const textElement = document.createElement("div");
+      textElement.className = "text-gray-600 text-sm font-medium text-center";
+      textElement.textContent = name;
+      parent.appendChild(textElement);
+    }
+  };
+
+  // Animation variants for Framer Motion
+  const variants = {
+    enter: (direction: "up" | "down") => ({
+      opacity: 0,
+      y: direction === "up" ? 40 : -40,
+      zIndex: 1,
+    }),
+    center: {
+      opacity: 1,
+      y: 0,
+      zIndex: 2,
+      transition: {
+        opacity: { duration: ANIMATION_DURATION },
+        y: { duration: ANIMATION_DURATION },
+      },
+    },
+    exit: (direction: "up" | "down") => ({
+      opacity: 0,
+      y: direction === "up" ? -40 : 40,
+      zIndex: 1,
+      transition: {
+        opacity: { duration: ANIMATION_DURATION },
+        y: { duration: ANIMATION_DURATION },
+      },
+    }),
+  };
+
+  // Stagger delay for each card
+  const delay = index * STAGGER_PER_CARD;
+
+  // Use a unique key for each logo to ensure seamless looping
+  // The key must change every time the logo changes, so use the logo name and isShowingNext
+  return (
+    <div className="w-36 h-20 sm:w-40 sm:h-24   from-gray-50 to-gray-100 rounded-xl flex items-center justify-center p-4 relative border border-white/20 group overflow-hidden animated-logo-card">
+      <AnimatePresence initial={false} custom={isShowingNext ? "up" : "down"}>
+        <motion.div
+          key={isShowingNext ? next.name : current.name}
+          className="absolute inset-4 flex items-center justify-center transition-all duration-500 transform group-hover:scale-110"
+          style={{ zIndex: 2 }}
+          custom={isShowingNext ? "up" : "down"}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          variants={variants}
+          transition={{
+            delay,
+            opacity: { duration: ANIMATION_DURATION },
+            y: { duration: ANIMATION_DURATION },
+          }}
+        >
+          <img
+            src={isShowingNext ? next.logo : current.logo}
+            alt={`${isShowingNext ? next.name : current.name} logo`}
+            className={
+              "max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500" +
+              (isShowingNext ? "" : " animate-float")
+            }
+            onError={(e) =>
+              handleImgError(e, isShowingNext ? next.name : current.name)
+            }
+          />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export const AnimatedCompanies: React.FC = () => {
   const companySets: CompanySet[][] = [
     [
-      { name: 'Amazon', logo: '/logos/amazon.png' },
-      { name: 'Caltech', logo: '/logos/caltech.png' },
-      { name: 'Kaiser Permanente', logo: '/logos/kaiser-permanente.png' },
-      { name: 'Meta', logo: '/logos/meta.png' },
-      { name: 'Stanford', logo: '/logos/stanford.png' },
-      { name: 'Reckitt', logo: 'https://logo.clearbit.com/reckitt.com' },
-      { name: 'Biogen', logo: '/logos/biogen.png' }
+      { name: "Amazon", logo: "/logos/amazon.png" },
+      { name: "Caltech", logo: "/logos/caltech.png" },
+      { name: "Kaiser Permanente", logo: "/logos/kaiser-permanente.png" },
+      { name: "Meta", logo: "/logos/meta.png" },
+      { name: "Stanford", logo: "/logos/stanford.png" },
+      { name: "Reckitt", logo: "https://logo.clearbit.com/reckitt.com" },
+      { name: "Biogen", logo: "/logos/biogen.png" },
     ],
     [
-      { name: 'NVIDIA', logo: '/logos/nvidia.png' },
-      { name: 'University of Cambridge', logo: '/logos/cambridge.png' },
-      { name: 'PWC', logo: 'https://logo.clearbit.com/pwc.com' },
-      { name: 'Goldman Sachs', logo: '/logos/goldman-sachs.png' },
-      { name: 'MIT', logo: '/logos/mit.png' },
-      { name: 'GSK', logo: '/logos/gsk.png' },
-      { name: 'Roche', logo: 'https://logo.clearbit.com/roche.com' }
-    ]
+      { name: "NVIDIA", logo: "/logos/nvidia.png" },
+      { name: "University of Cambridge", logo: "/logos/cambridge.png" },
+      { name: "PWC", logo: "https://logo.clearbit.com/pwc.com" },
+      { name: "Goldman Sachs", logo: "/logos/goldman-sachs.png" },
+      { name: "MIT", logo: "/logos/mit.png" },
+      { name: "GSK", logo: "/logos/gsk.png" },
+      { name: "Roche", logo: "https://logo.clearbit.com/roche.com" },
+    ],
   ];
 
-  // Initialize with first set
-  useEffect(() => {
-    setCurrentLogos([...companySets[0]]);
-    setNextLogos([...companySets[1]]);
-  }, []);
+  const [currentSet, setCurrentSet] = useState(0);
+  // Each card will have its own isShowingNext state for staggered transitions
+  const [isShowingNextArr, setIsShowingNextArr] = useState<boolean[]>(
+    Array(CARD_COUNT).fill(false)
+  );
+  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
+
+  // Helper to clear all timeouts
+  const clearAllTimeouts = () => {
+    timeoutsRef.current.forEach((t) => clearTimeout(t));
+    timeoutsRef.current = [];
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Prepare the next logo before transition
-      setNextLogos(prev => {
-        const newLogos = [...prev];
-        newLogos[currentPosition] = companySets[nextSetIndex][currentPosition];
-        return newLogos;
-      });
+    // Staggered show/hide for each card
+    clearAllTimeouts();
 
-      // Set transitioning state for current position
-      setTransitioningIndex(currentPosition);
-      
-      setTimeout(() => {
-        // Update the current logo to the next one
-        setCurrentLogos(prev => {
-          const newLogos = [...prev];
-          newLogos[currentPosition] = companySets[nextSetIndex][currentPosition];
-          return newLogos;
-        });
-        
-        // Clear transitioning state
-        setTransitioningIndex(null);
-        
-        // Move to next position (right to left)
-        setCurrentPosition(prevPosition => {
-          const newPosition = prevPosition - 1;
-          
-          // If we've changed all logos in the set, prepare for next set
-          if (newPosition < 0) {
-            setNextSetIndex(prevNextSetIndex => {
-              const newNextSetIndex = (prevNextSetIndex + 1) % companySets.length;
-              // Update nextLogos to the next set
-              setNextLogos([...companySets[newNextSetIndex]]);
-              return newNextSetIndex;
-            });
-            return companySets[0].length - 1; // Reset to rightmost position
-          }
-          
-          return newPosition;
-        });
-      }, 300); // 300ms transition time
-    }, 1000); // Change every 1 second
+    // Show current logos for SHOW_DURATION, then show next logos for SHOW_DURATION, then swap set
+    // 1. Show current (isShowingNextArr = [false, ...])
+    setIsShowingNextArr(Array(CARD_COUNT).fill(false));
 
-    return () => clearInterval(interval);
-  }, [currentPosition, nextSetIndex]);
+    // 2. After SHOW_DURATION, start staggered transition to next (isShowingNextArr = [true, ...])
+    for (let i = 0; i < CARD_COUNT; i++) {
+      const timeout = setTimeout(() => {
+        setIsShowingNextArr((prev) => {
+          const arr = [...prev];
+          arr[i] = true;
+          return arr;
+        });
+      }, SHOW_DURATION * 1000 + i * STAGGER_PER_CARD * 1000);
+      timeoutsRef.current.push(timeout);
+    }
+
+    // 3. After SHOW_DURATION for next + stagger, reset to current set+1 and all isShowingNextArr = false
+    const totalStagger = (CARD_COUNT - 1) * STAGGER_PER_CARD;
+    const resetTimeout = setTimeout(() => {
+      setCurrentSet((prev) => (prev + 1) % companySets.length);
+      setIsShowingNextArr(Array(CARD_COUNT).fill(false));
+    }, (SHOW_DURATION + totalStagger + SHOW_DURATION) * 1000);
+
+    timeoutsRef.current.push(resetTimeout);
+
+    return () => {
+      clearAllTimeouts();
+    };
+    // eslint-disable-next-line
+  }, [currentSet, companySets.length]);
+
+  // For each card, determine which set is current and which is next
+  const currentLogos = companySets[currentSet];
+  const nextLogos = companySets[(currentSet + 1) % companySets.length];
 
   return (
     <div className="flex justify-center gap-[27px] mt-8 max-md:grid max-md:grid-cols-2 max-md:gap-4">
       {currentLogos.map((company, index) => (
-        <div
-          key={`container-${index}`}
-          className="w-36 h-32 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center p-4 relative hover-lift glass-effect border border-white/20 shadow-lg group animate-bounce-in"
-          style={{ animationDelay: `${index * 100}ms` }}
-        >
-          {/* Current logo */}
-          <div className={`absolute inset-4 flex items-center justify-center transition-all duration-500 transform ${
-            transitioningIndex === index ? 'opacity-0 scale-95 rotate-3' : 'opacity-100 scale-100 rotate-0'
-          } group-hover:scale-110`}>
-            <img
-              src={company.logo}
-              alt={`${company.name} logo`}
-              className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500 animate-float"
-              style={{ animationDelay: `${index * 200}ms` }}
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const parent = target.parentElement;
-                if (parent) {
-                  const textElement = document.createElement('div');
-                  textElement.className = 'text-gray-600 text-sm font-medium text-center';
-                  textElement.textContent = company.name;
-                  parent.appendChild(textElement);
-                }
-              }}
-            />
-          </div>
-          
-          {/* Next logo (only visible during transition) */}
-          {transitioningIndex === index && nextLogos[index] && (
-            <div className="absolute inset-4 flex items-center justify-center transition-all duration-500 opacity-100 scale-105 animate-slide-in-scale">
-              <img
-                src={nextLogos[index].logo}
-                alt={`${nextLogos[index].name} logo`}
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent) {
-                    const textElement = document.createElement('div');
-                    textElement.className = 'text-gray-600 text-sm font-medium text-center';
-                    textElement.textContent = nextLogos[index].name;
-                    parent.appendChild(textElement);
-                  }
-                }}
-              />
-            </div>
-          )}
-        </div>
+        <AnimatedLogoCard
+          key={index}
+          current={company}
+          next={nextLogos[index]}
+          isShowingNext={isShowingNextArr[index]}
+          index={index}
+        />
       ))}
     </div>
   );
