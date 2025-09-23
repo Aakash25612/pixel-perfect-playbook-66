@@ -94,16 +94,16 @@ export const Testimonials: React.FC = () => {
           {testimonials.map((column, columnIndex) => (
             <div key={columnIndex} className="space-y-4">
               {column.map((testimonial, index) => (
-                <article key={index} className="border border-neutral-200 rounded-2xl p-[25px]">
+                <article key={index} className={`border border-neutral-200 rounded-2xl p-[25px] hover-lift transition-all duration-500 group hover:border-neutral-300 hover:shadow-lg animate-bounce-in glass-effect bg-white/70 backdrop-blur-sm`} style={{ animationDelay: `${(columnIndex * column.length + index) * 80}ms` }}>
                   <div className="mb-6">
-                    <h3 className="text-neutral-900 font-medium text-base">
+                    <h3 className="text-neutral-900 font-medium text-base group-hover:text-primary transition-colors duration-300">
                       {testimonial.name}
                     </h3>
-                    <p className="text-gray-400 text-base">
+                    <p className="text-gray-400 text-base group-hover:text-gray-500 transition-colors duration-300">
                       {testimonial.title}
                     </p>
                   </div>
-                  <p className="text-neutral-900 font-normal text-base tracking-[-0.32px]">
+                  <p className="text-neutral-900 font-normal text-base tracking-[-0.32px] group-hover:text-neutral-800 transition-colors duration-300">
                     {testimonial.content}
                   </p>
                 </article>

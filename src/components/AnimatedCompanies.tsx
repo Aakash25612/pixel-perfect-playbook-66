@@ -91,16 +91,18 @@ export const AnimatedCompanies: React.FC = () => {
       {currentLogos.map((company, index) => (
         <div
           key={`container-${index}`}
-          className="w-36 h-32 bg-gray-50 rounded-lg flex items-center justify-center p-4 relative"
+          className="w-36 h-32 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center p-4 relative hover-lift glass-effect border border-white/20 shadow-lg group animate-bounce-in"
+          style={{ animationDelay: `${index * 100}ms` }}
         >
           {/* Current logo */}
-          <div className={`absolute inset-4 flex items-center justify-center transition-opacity duration-300 ${
-            transitioningIndex === index ? 'opacity-0' : 'opacity-100'
-          }`}>
+          <div className={`absolute inset-4 flex items-center justify-center transition-all duration-500 transform ${
+            transitioningIndex === index ? 'opacity-0 scale-95 rotate-3' : 'opacity-100 scale-100 rotate-0'
+          } group-hover:scale-110`}>
             <img
               src={company.logo}
               alt={`${company.name} logo`}
-              className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500 animate-float"
+              style={{ animationDelay: `${index * 200}ms` }}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
@@ -117,11 +119,11 @@ export const AnimatedCompanies: React.FC = () => {
           
           {/* Next logo (only visible during transition) */}
           {transitioningIndex === index && nextLogos[index] && (
-            <div className="absolute inset-4 flex items-center justify-center transition-opacity duration-300 opacity-100">
+            <div className="absolute inset-4 flex items-center justify-center transition-all duration-500 opacity-100 scale-105 animate-slide-in-scale">
               <img
                 src={nextLogos[index].logo}
                 alt={`${nextLogos[index].name} logo`}
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';

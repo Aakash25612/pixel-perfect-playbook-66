@@ -69,16 +69,19 @@ export const Features: React.FC = () => {
           featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           {features.map((feature, index) => (
-            <article key={index} className="text-center">
-              <img
-                src={feature.image}
-                alt={feature.title}
-                className="aspect-[1.56] object-contain w-full rounded-xl mb-8"
-              />
-              <h3 className="text-neutral-900 text-lg leading-none mb-1.5">
+            <article key={index} className={`text-center hover-lift transition-all duration-500 group animate-bounce-in`} style={{ animationDelay: `${index * 150}ms` }}>
+              <div className="relative overflow-hidden rounded-xl mb-8">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="aspect-[1.56] object-contain w-full transition-all duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <h3 className="text-neutral-900 text-lg leading-none mb-1.5 group-hover:text-primary transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-sm font-medium tracking-[-0.32px] leading-none">
+              <p className="text-gray-600 text-sm font-medium tracking-[-0.32px] leading-none group-hover:text-gray-700 transition-colors duration-300">
                 {feature.description}
               </p>
             </article>
@@ -100,11 +103,11 @@ export const Features: React.FC = () => {
             statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             {stats.map((stat, index) => (
-              <div key={index} className="bg-gray-100 p-8 rounded-2xl text-left">
-                <div className="text-base font-normal leading-none text-gray-600 mb-4">
+              <div key={index} className={`bg-gradient-to-br from-gray-100 to-gray-200 p-8 rounded-2xl text-left hover-lift transition-all duration-500 group animate-bounce-in border border-white/50 shadow-lg hover:shadow-xl`} style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="text-base font-normal leading-none text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-300">
                   {stat.label}
                 </div>
-                <div className="text-[38px] font-medium leading-loose text-gray-600">
+                <div className="text-[38px] font-medium leading-loose text-gray-600 group-hover:text-primary transition-all duration-300 animate-pulse-glow">
                   {stat.value}
                 </div>
               </div>
@@ -131,14 +134,17 @@ const WorkflowFeature: React.FC<{ feature: any; index: number }> = ({ feature })
           {feature.description}
         </p>
       </div>
-      <div className={`bg-gray-100 rounded-xl p-14 max-md:p-5 transition-all duration-600 ease-out delay-300 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      <div className={`bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-14 max-md:p-5 transition-all duration-600 ease-out delay-300 hover-lift overflow-hidden group glass-effect border border-white/30 shadow-xl ${
+        isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
       }`}>
-        <img
-          src={feature.image}
-          alt={feature.altText}
-          className="aspect-[1.8] object-contain w-full rounded-[20px_20px_0px_0px]"
-        />
+        <div className="relative overflow-hidden rounded-[20px]">
+          <img
+            src={feature.image}
+            alt={feature.altText}
+            className="aspect-[1.8] object-contain w-full transition-all duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </div>
       </div>
     </section>
   );

@@ -113,6 +113,67 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "shimmer": {
+          "0%": {
+            "background-position": "-1000px 0"
+          },
+          "100%": {
+            "background-position": "1000px 0"
+          }
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          },
+          "50%": {
+            opacity: "0.8",
+            transform: "scale(1.02)"
+          }
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)"
+          },
+          "50%": {
+            transform: "translateY(-10px)"
+          }
+        },
+        "slide-in-scale": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-100%) scale(0.8)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0%) scale(1)"
+          }
+        },
+        "bounce-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.3) translateY(100px)"
+          },
+          "50%": {
+            opacity: "1",
+            transform: "scale(1.05) translateY(-30px)"
+          },
+          "70%": {
+            transform: "scale(0.95) translateY(10px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) translateY(0)"
+          }
+        },
+        "spin-slow": {
+          from: {
+            transform: "rotate(0deg)"
+          },
+          to: {
+            transform: "rotate(360deg)"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -125,6 +186,12 @@ export default {
         "slide-up-delay-300": "slide-up 0.6s ease-out 0.3s both",
         "slide-up-delay-400": "slide-up 0.6s ease-out 0.4s both",
         "fade-in-up-delay-500": "fade-in-up 0.8s ease-out 0.5s both",
+        "shimmer": "shimmer 2s infinite linear",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
+        "slide-in-scale": "slide-in-scale 0.6s ease-out forwards",
+        "bounce-in": "bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards",
+        "spin-slow": "spin-slow 8s linear infinite",
       },
     },
   },
