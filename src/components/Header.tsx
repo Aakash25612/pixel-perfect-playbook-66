@@ -64,27 +64,29 @@ export const Header: React.FC = () => {
                     id="use-cases-trigger"
                     aria-expanded={useCasesDropdown.open}
                     aria-controls="use-cases-dropdown"
-                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-none tracking-[-0.32px] grow antialiased select-none text-black`}
+                    className="group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-none tracking-[-0.32px] grow select-none text-black font-sans"
                     type="button"
                   >
-                    Use cases{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className={`lucide lucide-chevron-down relative top-[1px] ml-2 h-6 w-6 transition duration-200 ${
-                        useCasesDropdown.open ? "rotate-180" : ""
-                      }`}
-                      aria-hidden="true"
-                    >
-                      <path d="m6 9 6 6 6-6"></path>
-                    </svg>
+                    <div className="flex items-stretch gap-1">
+                      <div className="grow">Use cases</div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className={`aspect-[1] object-contain w-3 bg-blend-normal shrink-0 mt-1.5 transition duration-200 ${
+                          useCasesDropdown.open ? "rotate-180" : ""
+                        }`}
+                        aria-hidden="true"
+                      >
+                        <path d="m6 9 6 6 6-6"></path>
+                      </svg>
+                    </div>
                   </button>
                   {/* Dropdown menu */}
                   {useCasesDropdown.open && (
