@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-xl">
-      <div className="relative flex items-stretch gap-[22px] md:h-[88px] h-16 px-9 md:px-13 lg:px-16 mx-auto max-w-[1280px] my-auto font-medium text-sm leading-none tracking-[-0.32px] text-black" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      <div className="relative flex flex-row md:h-[88px] h-16 items-center px-9 md:px-13 lg:px-16 mx-auto max-w-[1280px]">
         <a
           className="flex flex-row justify-start items-center gap-4 p-4 -m-4 cursor-pointer pr-9 pt-2"
           aria-label="Anara logo"
@@ -44,169 +44,222 @@ export const Header: React.FC = () => {
             ></path>
           </svg>
         </a>
-        <div className="hidden md:block lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 text-sm font-medium tracking-[-0.32px] leading-none">
-          <nav className="self-stretch flex items-stretch gap-[22px] text-black my-auto max-md:max-w-full">
-            {/* Use cases dropdown */}
-            <div
-              className="flex items-stretch gap-1"
-              {...useCasesDropdown.bind}
-            >
-              <button
-                id="use-cases-trigger"
-                aria-expanded={useCasesDropdown.open}
-                aria-controls="use-cases-dropdown"
-                className="grow bg-transparent hover:bg-accent focus:bg-accent focus:outline-none transition-colors"
-                type="button"
+        <nav className="hidden md:flex items-center space-x-[6px]  lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
+          {/* Use cases dropdown */}
+          <nav
+            aria-label="Main"
+            data-orientation="horizontal"
+            dir="ltr"
+            className="relative z-10 flex max-w-max flex-1 items-center justify-center"
+            {...useCasesDropdown.bind}
+          >
+            <div style={{ position: "relative" }}>
+              <ul
+                data-orientation="horizontal"
+                className="group flex flex-1 list-none items-center justify-center space-x-2"
+                dir="ltr"
               >
-                Use cases
-              </button>
-              <img
-                src="https://api.builder.io/api/v1/image/assets/bf3b7d477c9a46e2b7d1c28b72133cf6/f348dc727c3979694787182f662d34a569797f72?placeholderIfAbsent=true"
-                className="aspect-[1] object-contain w-3 bg-blend-normal shrink-0 mt-1.5"
-                alt="Dropdown arrow"
-              />
-              {/* Dropdown menu */}
-              {useCasesDropdown.open && (
-                <motion.div
-                  id="use-cases-dropdown"
-                  className="absolute left-0 top-full mt-2 min-w-[180px] bg-white shadow-lg rounded-lg py-2 px-2 z-20 border border-gray-100"
-                  onMouseEnter={useCasesDropdown.bind.onMouseEnter}
-                  onMouseLeave={useCasesDropdown.bind.onMouseLeave}
-                  initial={{
-                    opacity: 0,
-                    y: 0,
-                    rotateX: "-90deg",
-                    perspective: "1000px",
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "top",
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    rotateX: "0deg",
-                    perspective: "1000px",
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "top",
-                  }}
-                  exit={{
-                    opacity: 0,
-                    y: 0,
-                    rotateX: "-90deg",
-                    perspective: "1000px",
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "top",
-                  }}
-                  transition={{ duration: 0.35, ease: [0.4, 0.2, 0.2, 1] }}
-                >
-                  <a
-                    href="/use-cases/marketing"
-                    className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
+                <li className="relative">
+                  <button
+                    id="use-cases-trigger"
+                    aria-expanded={useCasesDropdown.open}
+                    aria-controls="use-cases-dropdown"
+                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-none tracking-[-0.32px] grow antialiased select-none text-black`}
+                    type="button"
                   >
-                    Marketing
-                  </a>
-                  <a
-                    href="/use-cases/sales"
-                    className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
-                  >
-                    Sales
-                  </a>
-                  <a
-                    href="/use-cases/support"
-                    className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
-                  >
-                    Support
-                  </a>
-                </motion.div>
-              )}
-            </div>
-
-            {/* Resources dropdown */}
-            <div
-              className="flex items-stretch gap-1"
-              {...resourcesDropdown.bind}
-            >
-              <button
-                id="resources-trigger"
-                aria-expanded={resourcesDropdown.open}
-                aria-controls="resources-dropdown"
-                className="grow bg-transparent hover:bg-accent focus:bg-accent focus:outline-none transition-colors"
-                type="button"
-              >
-                Resources
-              </button>
-              <img
-                src="https://api.builder.io/api/v1/image/assets/bf3b7d477c9a46e2b7d1c28b72133cf6/f348dc727c3979694787182f662d34a569797f72?placeholderIfAbsent=true"
-                className="aspect-[1] object-contain w-3 bg-blend-normal shrink-0 mt-1.5"
-                alt="Dropdown arrow"
-              />
-              {/* Dropdown menu */}
-              {resourcesDropdown.open && (
-                <motion.div
-                  id="resources-dropdown"
-                  className="absolute left-0 top-full mt-2 min-w-[180px] bg-white shadow-lg rounded-lg py-2 px-2 z-20 border border-gray-100"
-                  onMouseEnter={resourcesDropdown.bind.onMouseEnter}
-                  onMouseLeave={resourcesDropdown.bind.onMouseLeave}
-                  initial={{
-                    opacity: 0,
-                    y: 0,
-                    rotateX: "-90deg",
-                    perspective: "1000px",
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "top",
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    rotateX: "0deg",
-                    perspective: "1000px",
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "top",
-                  }}
-                  exit={{
-                    opacity: 0,
-                    y: 0,
-                    rotateX: "-90deg",
-                    perspective: "1000px",
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "top",
-                  }}
-                  transition={{ duration: 0.35, ease: [0.4, 0.2, 0.2, 1] }}
-                >
-                  <a
-                    href="/resources/blog"
-                    className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="/resources/docs"
-                    className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
-                  >
-                    Documentation
-                  </a>
-                  <a
-                    href="/resources/webinars"
-                    className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
-                  >
-                    Webinars
-                  </a>
-                </motion.div>
-              )}
-            </div>
-
-            <div className="flex items-stretch gap-[21px] text-neutral-900">
-              <button className="grow hover:bg-accent focus:bg-accent focus:outline-none transition-colors">
-                Pricing
-              </button>
-              <button className="grow hover:bg-accent focus:bg-accent focus:outline-none transition-colors">
-                Careers
-              </button>
-              <button className="grow hover:bg-accent focus:bg-accent focus:outline-none transition-colors">
-                Contact sales
-              </button>
+                    Use cases{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`lucide lucide-chevron-down relative top-[1px] ml-2 h-6 w-6 transition duration-200 ${
+                        useCasesDropdown.open ? "rotate-180" : ""
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                  </button>
+                  {/* Dropdown menu */}
+                  {useCasesDropdown.open && (
+                    <motion.div
+                      id="use-cases-dropdown"
+                      className="absolute left-0 top-full mt-2 min-w-[180px] bg-white shadow-lg rounded-lg py-2 px-2 z-20 border border-gray-100"
+                      onMouseEnter={useCasesDropdown.bind.onMouseEnter}
+                      onMouseLeave={useCasesDropdown.bind.onMouseLeave}
+                      initial={{
+                        opacity: 0,
+                        y: 0,
+                        rotateX: "-90deg",
+                        perspective: "1000px",
+                        transformStyle: "preserve-3d",
+                        transformOrigin: "top",
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        rotateX: "0deg",
+                        perspective: "1000px",
+                        transformStyle: "preserve-3d",
+                        transformOrigin: "top",
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: 0,
+                        rotateX: "-90deg",
+                        perspective: "1000px",
+                        transformStyle: "preserve-3d",
+                        transformOrigin: "top",
+                      }}
+                      transition={{ duration: 0.35, ease: [0.4, 0.2, 0.2, 1] }}
+                    >
+                      <a
+                        href="/use-cases/marketing"
+                        className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
+                      >
+                        Marketing
+                      </a>
+                      <a
+                        href="/use-cases/sales"
+                        className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
+                      >
+                        Sales
+                      </a>
+                      <a
+                        href="/use-cases/support"
+                        className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
+                      >
+                        Support
+                      </a>
+                    </motion.div>
+                  )}
+                </li>
+              </ul>
             </div>
           </nav>
-        </div>
+          {/* Resources dropdown */}
+          <nav
+            aria-label="Main"
+            data-orientation="horizontal"
+            dir="ltr"
+            className="relative z-10 flex max-w-max flex-1 items-center justify-center"
+            {...resourcesDropdown.bind}
+          >
+            <div style={{ position: "relative" }}>
+              <ul
+                data-orientation="horizontal"
+                className="group flex flex-1 list-none items-center justify-center space-x-2"
+                dir="ltr"
+              >
+                <li className="relative">
+                  <button
+                    id="resources-trigger"
+                    aria-expanded={resourcesDropdown.open}
+                    aria-controls="resources-dropdown"
+                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-none tracking-[-0.32px] grow antialiased select-none text-black`}
+                    type="button"
+                  >
+                    Resources{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`lucide lucide-chevron-down relative top-[1px] ml-2 h-6 w-6 transition duration-200 ${
+                        resourcesDropdown.open ? "rotate-180" : ""
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                  </button>
+                  {/* Dropdown menu */}
+                  {resourcesDropdown.open && (
+                    <motion.div
+                      id="resources-dropdown"
+                      className="absolute left-0 top-full mt-2 min-w-[180px]  bg-white shadow-lg rounded-lg py-2 px-2 z-20 border border-gray-100"
+                      onMouseEnter={resourcesDropdown.bind.onMouseEnter}
+                      onMouseLeave={resourcesDropdown.bind.onMouseLeave}
+                      initial={{
+                        opacity: 0,
+                        y: 0,
+                        rotateX: "-90deg",
+                        perspective: "1000px",
+                        transformStyle: "preserve-3d",
+                        transformOrigin: "top",
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        rotateX: "0deg",
+                        perspective: "1000px",
+                        transformStyle: "preserve-3d",
+                        transformOrigin: "top",
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: 0,
+                        rotateX: "-90deg",
+                        perspective: "1000px",
+                        transformStyle: "preserve-3d",
+                        transformOrigin: "top",
+                      }}
+                      transition={{ duration: 0.35, ease: [0.4, 0.2, 0.2, 1] }}
+                    >
+                      <a
+                        href="/resources/blog"
+                        className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
+                      >
+                        Blog
+                      </a>
+                      <a
+                        href="/resources/docs"
+                        className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
+                      >
+                        Documentation
+                      </a>
+                      <a
+                        href="/resources/webinars"
+                        className="block px-5 py-2 text-sm text-gray-900 rounded-sm hover:bg-gray-100"
+                      >
+                        Webinars
+                      </a>
+                    </motion.div>
+                  )}
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <button
+            aria-busy="false"
+            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-black hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-medium leading-none tracking-[-0.32px] grow antialiased select-none"
+          >
+            <span className="truncate">Pricing</span>
+          </button>
+          <button
+            aria-busy="false"
+            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-black hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-medium leading-none tracking-[-0.32px] grow antialiased select-none"
+          >
+            <span className="truncate">Careers</span>
+          </button>
+          <button
+            aria-busy="false"
+            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-black hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-medium leading-none tracking-[-0.32px] grow antialiased select-none"
+          >
+            <span className="truncate">Contact sales</span>
+          </button>
+        </nav>
         <div className="hidden md:flex items-center ml-auto">
           <div className="flex flex-row gap-5">
             <button
