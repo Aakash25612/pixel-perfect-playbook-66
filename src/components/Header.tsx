@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-xl">
-      <div className="relative flex flex-row md:h-[88px] h-16 items-center px-9 md:px-13 lg:px-16 mx-auto max-w-[1280px]">
+      <div className="relative flex items-stretch gap-[22px] md:h-[88px] h-16 px-9 md:px-13 lg:px-16 mx-auto max-w-[1280px] my-auto font-medium text-sm leading-none tracking-[-0.32px] text-black" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
         <a
           className="flex flex-row justify-start items-center gap-4 p-4 -m-4 cursor-pointer pr-9 pt-2"
           aria-label="Anara logo"
