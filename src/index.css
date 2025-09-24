@@ -161,6 +161,10 @@
 All colors MUST be HSL.
 */
 
+.tracking-tight-nav {
+  letter-spacing: -0.32px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
