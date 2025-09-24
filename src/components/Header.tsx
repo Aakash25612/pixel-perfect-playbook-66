@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
                     id="use-cases-trigger"
                     aria-expanded={useCasesDropdown.open}
                     aria-controls="use-cases-dropdown"
-                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-6 tracking-tight antialiased select-none text-foreground`}
+                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-6 tracking-tight-nav antialiased select-none text-foreground`}
                     type="button"
                   >
                     Use cases{" "}
@@ -162,7 +162,7 @@ export const Header: React.FC = () => {
                     id="resources-trigger"
                     aria-expanded={resourcesDropdown.open}
                     aria-controls="resources-dropdown"
-                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-6 tracking-tight antialiased select-none text-foreground`}
+                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-medium leading-6 tracking-tight-nav antialiased select-none text-foreground`}
                     type="button"
                   >
                     Resources{" "}
