@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         'perfectly-nineties': ['PerfectlyNinetiesFont', 'serif'],
+        'system': ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
