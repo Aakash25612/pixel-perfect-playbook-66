@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
                     id="use-cases-trigger"
                     aria-expanded={useCasesDropdown.open}
                     aria-controls="use-cases-dropdown"
-                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[550] select-none`}
+                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[550] select-none text-muted-foreground`}
                     type="button"
                   >
                     Use cases{" "}
@@ -162,7 +162,7 @@ export const Header: React.FC = () => {
                     id="resources-trigger"
                     aria-expanded={resourcesDropdown.open}
                     aria-controls="resources-dropdown"
-                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[550] select-none`}
+                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[550] select-none text-muted-foreground`}
                     type="button"
                   >
                     Resources{" "}
@@ -243,19 +243,19 @@ export const Header: React.FC = () => {
           </nav>
           <button
             aria-busy="false"
-            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-text-primary hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-[550] select-none"
+            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-muted-foreground hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-[550] select-none"
           >
             <span className="truncate">Pricing</span>
           </button>
           <button
             aria-busy="false"
-            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-text-primary hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-[550] select-none"
+            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-muted-foreground hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-[550] select-none"
           >
             <span className="truncate">Careers</span>
           </button>
           <button
             aria-busy="false"
-            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-text-primary hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-[550] select-none"
+            className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border text-muted-foreground hover:bg-control-primary data-[highlighted]:bg-popover-hover data-[highlighted]:text-accent-foreground data-[state=open]:bg-popover-hover data-[state=highlighted]:bg-popover-hover group-data-[highlighted]:bg-popover-hover group-data-[highlighted]:text-accent-foreground group-focus:bg-popover-hover group-focus:text-accent-foreground px-4 py-2 h-9.5 rounded-5 gap-3 font-[550] select-none"
           >
             <span className="truncate">Contact sales</span>
           </button>
