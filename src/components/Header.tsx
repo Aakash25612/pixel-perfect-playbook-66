@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
                     id="use-cases-trigger"
                     aria-expanded={useCasesDropdown.open}
                     aria-controls="use-cases-dropdown"
-                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[500] leading-5 antialiased select-none text-black`}
+                    className={`group inline-flex w-max items-center justify-center rounded-4 bg-transparent p-3 px-4 text-sm transition-colors hover:bg-accent data-[state=open]:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[505] leading-5 antialiased select-none text-black`}
                     type="button"
                   >
                     Use cases{" "}
