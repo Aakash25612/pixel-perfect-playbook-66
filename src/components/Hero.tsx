@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          Trusted by 2,000,000+ researchers and students
+          Trusted by 111,000+ students
         </p>
 
         <div
