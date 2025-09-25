@@ -83,14 +83,14 @@ const InviteFriends: React.FC = () => {
           + Add more invites
         </button>
 
-        {/* Take me to Anara Button */}
+        {/* Install Extension Button */}
         <Button
           variant="primary"
           size="lg"
           className="w-full py-4 text-base font-medium bg-black text-white hover:bg-gray-800 !rounded-xl mb-3"
           onClick={handleTakeToAnara}
         >
-          Take me to Anara
+          Install extension
         </Button>
 
         {/* Copy Invite Link Button */}
@@ -105,7 +105,7 @@ const InviteFriends: React.FC = () => {
 
         {/* Join Text */}
         <p className="text-center text-gray-600 text-base mb-8">
-          Join 2M+ researchers
+          Join 100k+ students
         </p>
 
         {/* Email Info */}
