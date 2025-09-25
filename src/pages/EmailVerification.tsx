@@ -87,6 +87,7 @@ const EmailVerification: React.FC = () => {
           variant="primary"
           size="lg"
           className="w-full py-4 text-base font-medium !rounded-xl mb-6"
+          onClick={() => navigate('/user-purpose')}
         >
           Continue
         </Button>
