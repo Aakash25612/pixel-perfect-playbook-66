@@ -84,8 +84,7 @@ const Dashboard: React.FC = () => {
                   id="plus-menu-folder-input"
                   className="hidden"
                   multiple
-                  webkitdirectory="true"
-                  directory="true"
+                  {...({ webkitdirectory: "true" } as any)}
                   type="file"
                 />
                 <button
