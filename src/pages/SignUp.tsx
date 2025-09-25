@@ -5,7 +5,11 @@ const SignUp: React.FC = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 font-inter font-medium leading-6 tracking-[-0.32px] antialiased" style={{ 
+      colorScheme: 'light',
+      fontFeatureSettings: 'normal',
+      fontVariationSettings: 'normal',
+    }}>
       <div className="w-full max-w-md">
         {/* Anara Logo */}
         <div className="text-center mb-16">

@@ -16,6 +16,10 @@ export default {
       fontFamily: {
         'perfectly-nineties': ['PerfectlyNinetiesFont', 'serif'],
         'system': ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        'inter': ['Inter', 'Inter Fallback', 'sans-serif'],
+      },
+      letterSpacing: {
+        '-0.32px': '-0.32px',
       },
       colors: {
         border: "hsl(var(--border))",
