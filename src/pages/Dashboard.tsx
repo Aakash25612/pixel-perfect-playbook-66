@@ -136,57 +136,59 @@ const Dashboard: React.FC = () => {
               Understand, research and write about anything
             </h1>
 
-            {/* Input Area with Action Buttons */}
-            <div className="relative w-full max-w-3xl mx-auto">
-              {/* Action Buttons Above Input */}
-              <div className="flex items-center justify-start space-x-3 mb-4">
-                <Button className="bg-blue-100 text-blue-600 hover:bg-blue-200 text-sm px-4 py-2 !rounded-full">
-                  @ Mention
-                </Button>
-                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-4 py-2 !rounded-full flex items-center space-x-1">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3" />
-                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                  <span>GPT OSS</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Button>
-                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-4 py-2 !rounded-full flex items-center space-x-1">
-                  <span>250 words</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </Button>
-                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-                  </svg>
-                </Button>
-                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                </Button>
-                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                </Button>
-              </div>
-              
-              {/* Chat Input Area */}
-              <div className="mt-8 max-w-3xl mx-auto">
-                <div className="relative">
+            {/* GPT-Style Chat Input */}
+            <div className="relative w-full max-w-4xl mx-auto">
+              <div className="relative border-2 border-gray-200 rounded-2xl bg-white shadow-sm">
+                {/* Action Buttons Inside Input */}
+                <div className="flex items-center justify-start space-x-2 p-3 pb-2">
+                  <Button className="bg-blue-100 text-blue-600 hover:bg-blue-200 text-xs px-3 py-1.5 !rounded-full">
+                    @ Mention
+                  </Button>
+                  <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-3 py-1.5 !rounded-full flex items-center space-x-1">
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="3" />
+                      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+                    </svg>
+                    <span>GPT OSS</span>
+                    <svg className="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Button>
+                  <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-3 py-1.5 !rounded-full flex items-center space-x-1">
+                    <span>250 words</span>
+                    <svg className="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Button>
+                  <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-2 py-1.5 !rounded-full">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                    </svg>
+                  </Button>
+                  <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-2 py-1.5 !rounded-full">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </Button>
+                  <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-2 py-1.5 !rounded-full">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10m0 0V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2m10 0v10a2 2 0 01-2 2H9a2 2 0 01-2-2V8m10 0H7" />
+                    </svg>
+                  </Button>
+                </div>
+                
+                {/* Text Input Area */}
+                <div className="relative px-3 pb-3">
                   <Textarea
-                    placeholder="Ask anything..."
-                    className="min-h-[120px] w-full resize-none border-2 border-gray-200 rounded-lg px-4 py-3 text-base focus:border-gray-400 focus:ring-0 focus:ring-offset-0"
-                    rows={4}
+                    placeholder="Understand, research and write about anything"
+                    className="min-h-[60px] w-full resize-none border-0 bg-transparent px-2 py-2 text-base placeholder:text-gray-500 focus:outline-none focus:ring-0 focus:ring-offset-0"
+                    rows={2}
                   />
-                  <div className="absolute bottom-3 right-3">
+                  <div className="absolute bottom-5 right-5">
                     <Button className="bg-black text-white hover:bg-gray-800 text-sm px-4 py-2 !rounded-lg">
-                      Send
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
                     </Button>
                   </div>
                 </div>
