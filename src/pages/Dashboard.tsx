@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/Button";
+import { Textarea } from "@/components/ui/textarea";
 const Dashboard: React.FC = () => {
   return <div className="min-h-screen bg-white flex font-inter antialiased">
       {/* Sidebar */}
@@ -173,6 +174,22 @@ const Dashboard: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
                 </Button>
+              </div>
+              
+              {/* Chat Input Area */}
+              <div className="mt-8 max-w-3xl mx-auto">
+                <div className="relative">
+                  <Textarea
+                    placeholder="Ask anything..."
+                    className="min-h-[120px] w-full resize-none border-2 border-gray-200 rounded-lg px-4 py-3 text-base focus:border-gray-400 focus:ring-0 focus:ring-offset-0"
+                    rows={4}
+                  />
+                  <div className="absolute bottom-3 right-3">
+                    <Button className="bg-black text-white hover:bg-gray-800 text-sm px-4 py-2 !rounded-lg">
+                      Send
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
