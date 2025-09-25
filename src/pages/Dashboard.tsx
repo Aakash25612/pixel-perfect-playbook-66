@@ -135,47 +135,46 @@ const Dashboard: React.FC = () => {
               Understand, research and write about anything
             </h1>
 
-            {/* Action Buttons Row 1 */}
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <Button className="bg-blue-100 text-blue-600 hover:bg-blue-200 text-sm px-4 py-2 !rounded-full">
-                @ Mention
-              </Button>
-              <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-4 py-2 !rounded-full flex items-center space-x-1">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="3" />
-                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-                </svg>
-                <span>GPT OSS</span>
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Button>
-              <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-4 py-2 !rounded-full flex items-center space-x-1">
-                <span>250 words</span>
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Button>
-              <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-                </svg>
-              </Button>
-              <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                </svg>
-              </Button>
+            {/* Input Area with Action Buttons */}
+            <div className="relative w-full max-w-3xl mx-auto">
+              {/* Action Buttons Above Input */}
+              <div className="flex items-center justify-start space-x-3 mb-4">
+                <Button className="bg-blue-100 text-blue-600 hover:bg-blue-200 text-sm px-4 py-2 !rounded-full">
+                  @ Mention
+                </Button>
+                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-4 py-2 !rounded-full flex items-center space-x-1">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                  <span>GPT OSS</span>
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Button>
+                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-4 py-2 !rounded-full flex items-center space-x-1">
+                  <span>250 words</span>
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Button>
+                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                  </svg>
+                </Button>
+                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                </Button>
+                <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-2 py-2 !rounded-full">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                </Button>
+              </div>
             </div>
-
-            {/* Action Buttons Row 2 */}
-            
-
-            {/* Action Buttons Row 3 */}
-            
-
-            {/* Get Started Section */}
-            
           </div>
         </div>
       </div>
