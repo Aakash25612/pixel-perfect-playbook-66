@@ -66,23 +66,7 @@ const Dashboard: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="mt-auto p-4 space-y-4">
-          <div className="space-y-2">
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>Plan usage</span>
-              <span className="text-blue-600">Free</span>
-            </div>
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>AI words/day</span>
-              <span>0/1000</span>
-            </div>
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>Imports/day</span>
-              <span>0/5</span>
-            </div>
-            <Button className="w-full bg-black text-white hover:bg-gray-800 text-xs py-2 !rounded-lg">
-              Get unlimited
-            </Button>
-          </div>
+          
 
           <div className="space-y-1">
             <button className="flex items-center space-x-3 text-xs text-gray-600 hover:bg-gray-100 rounded-md px-2 py-1 w-full">
