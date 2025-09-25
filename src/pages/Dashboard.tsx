@@ -123,9 +123,7 @@ const Dashboard: React.FC = () => {
               <div className="relative border-2 border-gray-200 rounded-2xl bg-white shadow-sm">
                 {/* Action Buttons Inside Input */}
                 <div className="flex items-center justify-start space-x-2 p-3 pb-2">
-                  <Button className="bg-blue-100 text-blue-600 hover:bg-blue-200 text-xs px-3 py-1.5 !rounded-full">
-                    @ Mention
-                  </Button>
+                  
                   <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-3 py-1.5 !rounded-full flex items-center space-x-1">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                       <circle cx="12" cy="12" r="3" />
