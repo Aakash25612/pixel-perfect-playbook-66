@@ -1,9 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/Button";
-
 const Dashboard: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-white flex font-inter antialiased">
+  return <div className="min-h-screen bg-white flex font-inter antialiased">
       {/* Sidebar */}
       <div className="w-64 bg-gray-50 border-r border-gray-200 flex flex-col">
         {/* User Dropdown */}
@@ -144,8 +142,8 @@ const Dashboard: React.FC = () => {
               </Button>
               <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm px-4 py-2 !rounded-full flex items-center space-x-1">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="3"/>
-                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="12" cy="12" r="3" />
+                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
                 </svg>
                 <span>GPT OSS</span>
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,101 +169,16 @@ const Dashboard: React.FC = () => {
             </div>
 
             {/* Action Buttons Row 2 */}
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 !rounded-lg flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <span>Chat with file</span>
-              </Button>
-              <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 !rounded-lg flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                </svg>
-                <span>Chat with folder</span>
-              </Button>
-              <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 !rounded-lg flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                </svg>
-                <span>Outline literature review</span>
-              </Button>
-              <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 !rounded-lg flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
-                <span>Create note</span>
-              </Button>
-            </div>
+            
 
             {/* Action Buttons Row 3 */}
-            <div className="flex items-center justify-center space-x-4 mb-12">
-              <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 !rounded-lg flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <span>Search for papers</span>
-              </Button>
-              <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 !rounded-lg flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <span>Summarize paper</span>
-              </Button>
-              <Button className="bg-black text-white hover:bg-gray-800 text-sm px-4 py-2 !rounded-lg flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  <path fill="none" d="M0 0h24v24H0z"/>
-                </svg>
-                <span>Learn Anara</span>
-              </Button>
-              <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm px-4 py-2 !rounded-lg flex items-center space-x-1">
-                <span>More</span>
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Button>
-            </div>
+            
 
             {/* Get Started Section */}
-            <div className="text-left max-w-md mx-auto">
-              <h2 className="text-lg font-medium text-gray-900 mb-6">Get started</h2>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 border border-gray-300 rounded"></div>
-                  <span className="text-sm text-gray-700">Import and chat with a document</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 border border-gray-300 rounded"></div>
-                  <span className="text-sm text-gray-700">Add files to a folder and chat with it</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 border border-gray-300 rounded"></div>
-                  <span className="text-sm text-gray-700">Create a new note</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 border border-gray-300 rounded"></div>
-                  <span className="text-sm text-gray-700">@ mention an agent in chat</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 border border-gray-300 rounded"></div>
-                  <span className="text-sm text-gray-700">Connect Zotero and import a file from your library</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 border border-gray-300 rounded"></div>
-                  <span className="text-sm text-gray-700">Annotate a document with a comment</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 border border-gray-300 rounded"></div>
-                  <span className="text-sm text-gray-700">Add a citation to a Note</span>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Dashboard;
