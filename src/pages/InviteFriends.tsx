@@ -18,8 +18,7 @@ const InviteFriends: React.FC = () => {
   };
 
   const handleTakeToAnara = () => {
-    // Navigate to main app/dashboard
-    console.log("Taking to Anara with emails:", emails.filter(email => email.trim()));
+    navigate('/dashboard');
   };
 
   const handleCopyInviteLink = () => {
