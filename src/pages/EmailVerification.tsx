@@ -62,20 +62,24 @@ const EmailVerification: React.FC = () => {
         </p>
 
         {/* Code Input Fields */}
-        <div className="flex justify-center gap-3 mb-8">
-          {code.map((digit, index) => (
-            <input
-              key={index}
-              id={`code-${index}`}
-              type="text"
-              inputMode="numeric"
-              maxLength={1}
-              value={digit}
-              onChange={(e) => handleCodeChange(index, e.target.value)}
-              onKeyDown={(e) => handleKeyDown(index, e)}
-              className="w-12 h-12 border border-gray-300 rounded-xl text-center text-lg font-medium focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-            />
-          ))}
+        <div className="flex justify-center mb-8">
+          <div className="flex border border-gray-300 rounded-2xl overflow-hidden">
+            {code.map((digit, index) => (
+              <input
+                key={index}
+                id={`code-${index}`}
+                type="text"
+                inputMode="numeric"
+                maxLength={1}
+                value={digit}
+                onChange={(e) => handleCodeChange(index, e.target.value)}
+                onKeyDown={(e) => handleKeyDown(index, e)}
+                className={`w-12 h-12 text-center text-lg font-medium focus:outline-none focus:bg-gray-50 border-0 ${
+                  index < 5 ? 'border-r border-gray-300' : ''
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Continue Button */}
