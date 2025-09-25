@@ -132,9 +132,7 @@ const Dashboard: React.FC = () => {
         <div className="flex-1 flex flex-col items-center justify-center p-8">
           <div className="max-w-4xl w-full text-center space-y-8">
             {/* Main Heading */}
-            <h1 className="text-2xl font-medium text-gray-900 mb-8">
-              Understand, research and write about anything
-            </h1>
+            
 
             {/* GPT-Style Chat Input */}
             <div className="relative w-full max-w-4xl mx-auto">
@@ -179,11 +177,7 @@ const Dashboard: React.FC = () => {
                 
                 {/* Text Input Area */}
                 <div className="relative px-3 pb-3">
-                  <Textarea
-                    placeholder="Understand, research and write about anything"
-                    className="min-h-[60px] w-full resize-none border-0 bg-transparent px-2 py-2 text-base placeholder:text-gray-500 focus:outline-none focus:ring-0 focus:ring-offset-0"
-                    rows={2}
-                  />
+                  <Textarea placeholder="Understand, research and write about anything" className="min-h-[60px] w-full resize-none border-0 bg-transparent px-2 py-2 text-base placeholder:text-gray-500 focus:outline-none focus:ring-0 focus:ring-offset-0" rows={2} />
                   <div className="absolute bottom-5 right-5">
                     <Button className="bg-black text-white hover:bg-gray-800 text-sm px-4 py-2 !rounded-lg">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
