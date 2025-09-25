@@ -23,7 +23,11 @@ const SignUp: React.FC = () => {
 
         {/* Social Login Buttons */}
         <div className="space-y-3 mb-8">
-          <button className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-gray-100 hover:bg-gray-200 rounded-xl text-base font-medium text-black transition-colors">
+          <button className="w-full flex items-center justify-center gap-2 px-4 py-0 bg-black/5 hover:bg-black/10 rounded-2xl text-sm font-semibold text-neutral-900 transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer select-none h-11 leading-5 tracking-[-0.32px] font-inter mt-3" style={{ 
+            fontFeatureSettings: 'normal',
+            fontVariationSettings: 'normal',
+            colorScheme: 'light'
+          }}>
             <svg width="20" height="20" viewBox="0 0 24 24">
               <path
                 fill="#4285F4"
