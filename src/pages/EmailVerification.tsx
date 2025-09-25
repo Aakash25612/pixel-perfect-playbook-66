@@ -63,7 +63,7 @@ const EmailVerification: React.FC = () => {
 
         {/* Code Input Fields */}
         <div className="flex justify-center mb-8">
-          <div className="flex border border-gray-300 rounded-2xl overflow-hidden">
+          <div className="flex border border-gray-300 rounded-lg overflow-hidden">
             {code.map((digit, index) => (
               <input
                 key={index}
