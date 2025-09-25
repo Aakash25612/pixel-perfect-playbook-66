@@ -11,8 +11,8 @@ const UserPurpose: React.FC = () => {
   const navigate = useNavigate();
 
   const schools = [
-    "Harvard University", 
-    "Stanford University", 
+    "Harvard University",
+    "Stanford University",
     "Massachusetts Institute of Technology (MIT)",
     "University of California, Berkeley",
     "Yale University",
@@ -40,12 +40,12 @@ const UserPurpose: React.FC = () => {
     "Wake Forest University",
     "University of Michigan",
     "Boston College",
-    "New York University"
+    "New York University",
   ];
 
   useEffect(() => {
     if (searchQuery.length > 0) {
-      const filtered = schools.filter(school => 
+      const filtered = schools.filter((school) =>
         school.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setFilteredSchools(filtered.slice(0, 5));
@@ -64,54 +64,79 @@ const UserPurpose: React.FC = () => {
 
   const handleContinue = () => {
     if (selectedSchool) {
-      navigate('/invite-friends');
+      navigate("/invite-friends");
     }
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 font-inter font-medium leading-6 tracking-[-0.32px] antialiased" style={{ 
-      colorScheme: 'light',
-      fontFeatureSettings: 'normal',
-      fontVariationSettings: 'normal',
-    }}>
-      <div className="w-full max-w-md relative">
-        {/* Back Button */}
-        <button 
-          onClick={() => navigate('/verify-email')}
-          className="absolute top-0 left-0 p-2 hover:bg-gray-100 rounded-full transition-colors"
-          aria-label="Go back"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m15 18-6-6 6-6"/>
-          </svg>
-        </button>
-
-        {/* Anara Logo */}
-        <div className="text-center mb-16 mt-16">
-          <h1 className="text-5xl font-medium text-black">Anara</h1>
+    <div
+      className="min-h-screen bg-white flex flex-col items-center justify-center px-4 font-inter font-medium leading-6 tracking-[-0.32px] antialiased"
+      style={{
+        colorScheme: "light",
+        fontFeatureSettings: "normal",
+        fontVariationSettings: "normal",
+      }}
+    >
+      <div className="fixed top-0 flex flex-row justify-between px-9 py-11 w-full">
+        <div>
+          <button
+            className="flex justify-center items-center w-11 h-11 rounded-4 p-3 ease-in transition-all duration-150 cursor-pointer hover:bg-popover-hover"
+            type="button"
+            onClick={() => navigate("/verify-email")}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#666666"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-arrow-left"
+              aria-hidden="true"
+            >
+              <path d="m12 19-7-7 7-7"></path>
+              <path d="M19 12H5"></path>
+            </svg>
+          </button>
         </div>
-
-        {/* Title */}
-        <h2 className="text-2xl font-medium text-black text-center mb-3 leading-8">
-          What school do you go to?
+      </div>
+      <div className="w-80 flex flex-col items-stretch">
+        <h2 className="text-xl text-center mb-3">
+          <span
+            style={{
+              display: "inline-block",
+              verticalAlign: "top",
+              textDecoration: "inherit",
+              textWrap: "balance",
+              maxWidth: "250px",
+            }}
+          >
+            What school do you go to?
+          </span>
         </h2>
 
         {/* Subtitle */}
-        <p className="text-center text-gray-600 text-base mb-12">
+        <p className="text-center text-gray-600 text-base mb-8">
           Start typing to search. Pick your school to save it.
         </p>
 
         {/* School Search */}
-        <div className="relative mb-8">
+        <div className="relative mb-6">
           <Input
             type="text"
             placeholder="Find your institution"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => searchQuery && setShowSuggestions(true)}
-            className="w-full px-6 py-4 rounded-3xl border border-gray-300 text-base font-normal bg-gray-50 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:bg-white"
+            style={{
+              fontSize: "14px",
+            }}
+            className="w-full px-6 py-9 rounded-l border border-gray-300  text-base font-normal bg-gray-50 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:bg-white"
           />
-          
+
           {/* Suggestions Dropdown */}
           {showSuggestions && filteredSchools.length > 0 && (
             <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-2xl shadow-lg z-10 max-h-60 overflow-y-auto">
@@ -119,7 +144,10 @@ const UserPurpose: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => handleSchoolSelect(school)}
-                  className="w-full px-6 py-3 text-left text-base font-normal text-gray-900 hover:bg-gray-50 first:rounded-t-2xl last:rounded-b-2xl transition-colors"
+                  style={{
+                    fontSize: "14px",
+                  }}
+                  className="w-full px-6 py-5 text-left text-base font-normal text-gray-900 hover:bg-gray-50 first:rounded-t-2xl last:rounded-b-2xl transition-colors"
                 >
                   {school}
                 </button>
@@ -133,9 +161,9 @@ const UserPurpose: React.FC = () => {
           variant="primary"
           size="lg"
           className={`w-full py-4 text-base font-medium !rounded-xl mb-8 transition-all duration-200 ${
-            selectedSchool 
-              ? 'bg-black text-white hover:bg-gray-800' 
-              : 'bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-300'
+            selectedSchool
+              ? "bg-black text-white hover:bg-gray-800"
+              : "inline-flex items-center select-none relative justify-center whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border bg-control-primary text-text-primary hover:bg-control-secondary px-1.5 py-2 text-sm rounded-4 font-medium gap-3 h-14 rounded-6 hover:scale-[1.02] ease-in transition-transform"
           }`}
           onClick={handleContinue}
           disabled={!selectedSchool}
@@ -144,17 +172,22 @@ const UserPurpose: React.FC = () => {
         </Button>
 
         {/* Join Text */}
-        <p className="text-center text-gray-600 text-base mb-8">
+        <p className="text-sm text-text-primary mt-9 mb-8 text-center">
           Join 100k+ students
         </p>
 
         {/* Email Info */}
-        <div className="text-center text-sm text-gray-600 space-y-1">
-          <p>Continuing as <span className="font-medium text-black">aakashgoel2040@gmail.com</span></p>
+        <div className="flex flex-col items-center justify-center py-8 text-text-primary w-120 text-center text-sm">
+          <p>
+            Continuing as{" "}
+            <span className="font-medium text-black">
+              aakashgoel2040@gmail.com
+            </span>
+          </p>
           <p>
             Log in with another email{" "}
-            <button 
-              onClick={() => navigate('/signup')}
+            <button
+              onClick={() => navigate("/signup")}
               className="text-blue-600 underline hover:text-blue-700"
             >
               here
