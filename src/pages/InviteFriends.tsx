@@ -105,7 +105,7 @@ const InviteFriends: React.FC = () => {
 
         {/* Join Text */}
         <p className="text-center text-gray-600 text-base mb-8">
-          Join 100k+ students
+          Join 2M+ researchers
         </p>
 
         {/* Email Info */}
