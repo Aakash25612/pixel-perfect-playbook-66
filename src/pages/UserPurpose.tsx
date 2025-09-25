@@ -145,7 +145,7 @@ const UserPurpose: React.FC = () => {
 
         {/* Join Text */}
         <p className="text-center text-gray-600 text-base mb-8">
-          Join 10k+ students
+          Join 100k+ students
         </p>
 
         {/* Email Info */}
