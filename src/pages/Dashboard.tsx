@@ -4,6 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 const Dashboard: React.FC = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
+  const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
+  const [selectedModel, setSelectedModel] = useState("fast");
 
   return (
     <div className="min-h-screen bg-white flex font-inter antialiased">
@@ -137,16 +139,41 @@ const Dashboard: React.FC = () => {
               <div className="relative border-2 border-gray-200 rounded-2xl bg-white shadow-sm">
                 {/* Action Buttons Inside Input */}
                 <div className="flex items-center justify-start space-x-2 p-3 pb-2">
-                  <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-3 py-1.5 !rounded-full flex items-center space-x-1">
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="3" />
-                      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                    <span>GPT OSS</span>
-                    <svg className="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </Button>
+                  {/* Model Selection Dropdown */}
+                  <div className="relative">
+                    <Button 
+                      className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-3 py-1.5 !rounded-full flex items-center space-x-1"
+                      onClick={() => setModelDropdownOpen(!modelDropdownOpen)}
+                    >
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                      <span>{selectedModel}</span>
+                      <svg className="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </Button>
+                    
+                    {modelDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-[100px]">
+                        <div className="py-1">
+                          {["fast", "thinking", "pro"].map((option) => (
+                            <button
+                              key={option}
+                              className="block w-full px-3 py-2 text-xs text-left text-gray-700 hover:bg-gray-100"
+                              onClick={() => {
+                                setSelectedModel(option);
+                                setModelDropdownOpen(false);
+                              }}
+                            >
+                              {option}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                   <Button className="bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs px-3 py-1.5 !rounded-full flex items-center space-x-1">
                     <span>250 words</span>
                     <svg className="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
