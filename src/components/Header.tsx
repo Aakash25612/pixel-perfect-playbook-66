@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const useDropdown = () => {
   const [open, setOpen] = useState(false);
@@ -16,6 +17,7 @@ const useDropdown = () => {
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Dropdown state for Use cases and Resources
   const useCasesDropdown = useDropdown();
@@ -265,12 +267,14 @@ export const Header: React.FC = () => {
             <button
               aria-busy="false"
               className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border bg-secondary text-secondary-foreground hover:bg-secondary-hover h-9.5 rounded-5 gap-3 font-[550] select-none !rounded-full px-6 py-3"
+              onClick={() => navigate('/signup')}
             >
               <span className="truncate">Log in</span>
             </button>
             <button
               aria-busy="false"
               className="inline-flex items-center relative justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 box-border h-9.5 rounded-5 gap-3 font-[550] select-none bg-black text-muted hover:bg-black/90 !rounded-full px-6 py-3"
+              onClick={() => navigate('/signup')}
             >
               <span className="truncate">Get Anara free</span>
             </button>
