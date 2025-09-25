@@ -14,8 +14,7 @@ const UserPurpose: React.FC = () => {
 
   const handleContinue = () => {
     if (selectedPurpose) {
-      // Navigate to next step or dashboard
-      console.log("Selected purpose:", selectedPurpose);
+      navigate('/invite-friends');
     }
   };
 

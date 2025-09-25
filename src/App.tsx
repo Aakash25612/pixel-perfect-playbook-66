@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import SignUp from "./pages/SignUp";
 import EmailVerification from "./pages/EmailVerification";
 import UserPurpose from "./pages/UserPurpose";
+import InviteFriends from "./pages/InviteFriends";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/signup" element={<SignUp />} />
           <Route path="/verify-email" element={<EmailVerification />} />
           <Route path="/user-purpose" element={<UserPurpose />} />
+          <Route path="/invite-friends" element={<InviteFriends />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
