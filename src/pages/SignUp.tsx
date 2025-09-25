@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { useNavigate } from "react-router-dom";
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+
+  const handleContinueWithEmail = () => {
+    if (email.trim()) {
+      navigate('/verify-email');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 font-inter font-medium leading-6 tracking-[-0.32px] antialiased" style={{ 
@@ -88,6 +96,7 @@ const SignUp: React.FC = () => {
           variant="primary"
           size="lg"
           className="w-full py-4 text-base font-medium !rounded-xl mb-8"
+          onClick={handleContinueWithEmail}
         >
           Continue with email
         </Button>
