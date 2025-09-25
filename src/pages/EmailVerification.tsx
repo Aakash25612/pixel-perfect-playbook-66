@@ -104,7 +104,7 @@ const EmailVerification: React.FC = () => {
 
         {/* Join Text */}
         <p className="text-center text-gray-600 text-base mb-16">
-          Join 2M+ researchers
+          Join 10k+ students
         </p>
 
         {/* Terms and Privacy */}
