@@ -77,7 +77,6 @@ const EmailVerification: React.FC = () => {
                     verticalAlign: "top",
                     textDecoration: "inherit",
                     textWrap: "balance",
-                    maxWidth: "154px",
                   }}
                 >
                   Log in or sign up
