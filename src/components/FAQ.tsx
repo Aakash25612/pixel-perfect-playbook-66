@@ -5,29 +5,29 @@ export const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: "Is Anara free to try?",
+      question: "Is DuNorth free to try?",
       answer:
-        "Yes, Anara offers a free trial so you can explore all features before committing to a subscription.",
+        "Yes, DuNorth offers a free trial so you can explore all features before committing to a subscription.",
     },
     {
-      question: "Will this affect my ability to conduct independent research?",
+      question: "What are the primary uses of DuNorth?",
       answer:
-        "Not at all. Anara is designed to enhance your research capabilities while maintaining academic rigor and independence.",
+        "DuNorth tracks all your assignments, grades, and readings, writes papers with you, handles psets, and summarizes missed weeks. It keeps everything on track; ask & it knows!",
     },
     {
       question: "How can I verify the accuracy of AI-generated responses?",
       answer:
-        "Every response includes direct links to original sources, allowing you to verify information with a single click.",
+        "Every response includes direct links to original sources and citations back to your course readings, sou can always verify information with a single click.",
     },
     {
-      question: "How secure is my data with Anara?",
+      question: "How secure is my data with DuNorth?",
       answer:
         "We take data security seriously with enterprise-grade encryption and compliance with major security standards.",
     },
     {
-      question: "What file types does Anara support?",
+      question: "What file types does DuNorth support?",
       answer:
-        "Anara supports PDFs, Word documents, PowerPoint presentations, and various other academic file formats.",
+        "DuNorth supports PDFs, Word documents, PowerPoint presentations, and various other academic file formats.",
     },
     {
       question: "What is your refund policy?",

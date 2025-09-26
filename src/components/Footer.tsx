@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
               d="M1.56 15.846c-.915.553-1.959-.491-1.406-1.407L5.41 7.281a1.024 1.024 0 0 0 0-1.06l-3.048-4.66C1.808.645 2.85-.4 3.767.154l4.661 3.049c.326.196.734.196 1.06 0L14.438.154c.916-.553 1.96.491 1.407 1.407l-3.049 4.952a1.024 1.024 0 0 0 0 1.059l3.049 4.66c.553.916-.491 1.96-1.407 1.407l-4.66-3.048a1.024 1.024 0 0 0-1.06 0l-7.158 5.255Z"
             ></path>
           </svg>
-          <h2 className="font-perfectly-nineties font-[550] text-balance text-center mx-auto leading-[40px] sm:leading-[48px] md:leading-[60px] lg:leading-[72px] xl:leading-[80px] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] xl:text-[72px] max-w-[820px] mt-5">
+          <h2 className="font-perfectly-nineties font-[550] text-balance text-center mx-auto leading-[39px] sm:leading-[46px] md:leading-[58px] lg:leading-[68px] xl:leading-[76px] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] xl:text-[72px] max-w-[820px] mt-5">
             Where people and AI do research work together
           </h2>
           <p className="text-secondary-foreground leading-6 max-w-[750px] mt-7 mx-auto text-center text-balance">
@@ -112,63 +112,23 @@ export const Footer: React.FC = () => {
               <div className="flex flex-col text-lg font-medium">
                 <div className="flex items-center gap-4">
                   <span className="text-black text-lg font-semibold">
-                    Anara
+                    DuNorth
                   </span>
                   <span className="text-text-secondary text-lg font-normal">
-                    — AI for
+                    — AI workspace for
                   </span>
                 </div>
                 <span className="text-text-secondary text-lg font-normal">
-                  scientific advancement
+                  students who use Canvas
                 </span>
               </div>
               <p className="rounded-full font text-sm leading-4 text-text-secondary py-3 flex flex-row items-center gap-3">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clipPath="url(#clip0_585_86819)">
-                    <g clipPath="url(#clip1_585_86819)">
-                      <g clipPath="url(#clip2_585_86819)">
-                        <g clipPath="url(#clip3_585_86819)">
-                          <path d="M0 0H18V18H0V0Z" fill="#FB651E"></path>
-                          <path
-                            d="M8.3938 10.1774L5.3042 4.38965H6.71614L8.53358 8.05237C8.56157 8.11762 8.59419 8.18519 8.63146 8.25508C8.66872 8.32497 8.70135 8.39725 8.72926 8.47178C8.74796 8.49977 8.76189 8.52536 8.77124 8.5487C8.78059 8.57191 8.78987 8.593 8.79922 8.61156C8.84412 8.70104 8.8861 8.79196 8.92508 8.88416C8.96235 8.97276 8.9949 9.05432 9.02282 9.12885C9.10324 8.95822 9.1848 8.78813 9.2675 8.61859C9.3561 8.43684 9.44694 8.24805 9.54011 8.05237L11.3855 4.38965H12.6997L9.58201 10.2472V13.9799H8.39373L8.3938 10.1774Z"
-                            fill="white"
-                          ></path>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_585_86819">
-                      <rect
-                        width="18"
-                        height="18"
-                        rx="6.75"
-                        fill="white"
-                      ></rect>
-                    </clipPath>
-                    <clipPath id="clip1_585_86819">
-                      <rect
-                        width="18"
-                        height="18"
-                        rx="6.75"
-                        fill="white"
-                      ></rect>
-                    </clipPath>
-                    <clipPath id="clip2_585_86819">
-                      <rect width="18" height="18" fill="white"></rect>
-                    </clipPath>
-                    <clipPath id="clip3_585_86819">
-                      <rect width="18" height="18" fill="white"></rect>
-                    </clipPath>
-                  </defs>
-                </svg>
-                Backed by Y Combinator
+                <img
+                  src="/logos/alliance.png"
+                  alt="Alliance"
+                  className="w-[18px] h-[18px] rounded-md scale-95"
+                />
+                Backed by Alliance
               </p>
             </div>
             <div className="flex flex-wrap gap-16 w-full md:w-fit">
@@ -450,11 +410,11 @@ export const Footer: React.FC = () => {
                 </a>
               </div>
               <p className="text-[#9A9A9A] text-sm leading-[16px] font-normal">
-                Sub-processors include Stripe, Vercel and AWS.
+                Sub-processors include Stripe, Vercel and Supabase.
               </p>
             </div>
             <p className="text-[#9A9A9A] text-base leading-[16px]">
-              © 2025 Anara Labs, Inc
+              © 2025 Study Tools LLC
             </p>
           </div>
         </div>
@@ -474,11 +434,11 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-1.5 text-sm text-gray-600 font-medium bg-gray-50 px-3 py-1.5 rounded-full w-fit">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/1fb416fb5be4bfac8c6729dcbd55f59f2593e6b7?placeholderIfAbsent=true"
-                  alt="Y Combinator"
-                  className="w-[18px] h-[18px]"
+                  src="/logos/alliance.png"
+                  alt="Alliance"
+                  className="w-[18px] h-[18px] rounded-md scale-95"
                 />
-                <span>Backed by Y Combinator</span>
+                <span>Backed by Alliance</span>
               </div>
             </div>
 
@@ -518,11 +478,11 @@ export const Footer: React.FC = () => {
                 ))}
               </div>
               <p className="text-gray-400 font-normal text-sm">
-                Sub-processors include Stripe, Vercel and AWS.
+                Sub-processors include Stripe, Vercel and Supabase.
               </p>
             </div>
             <p className="text-gray-400 text-base font-medium">
-              © 2025 Anara Labs, Inc
+              © 2025 Study Tools LLC
             </p>
           </div>
         </div> */}

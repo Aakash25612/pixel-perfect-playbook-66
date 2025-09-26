@@ -6,88 +6,88 @@ export const Testimonials: React.FC = () => {
   const testimonials = [
     [
       {
-        name: "Anne",
-        title: "Research Scientist, GSK",
+        name: "Anna",
+        title: "Student Researcher, Caltech",
         content:
-          "I love it! It accomplishes in minutes what would take me ages to do manually. What really impresses me is how Anara recognizes themes and patterns I've completely missed. It's particularly good at pointing out important details and research gaps that aren't immediately obvious.",
+          "DuNorth accomplishes in minutes what would take me literally ages to do manually (sorting assignments, doing them). What really impresses me is how it NEVER misses things, and sees patterns in coursework I've completely missed. It's particularly good at pointing out important details (by that I mean remember to do them and doing them for you) in small assignments that take up hours a day.",
       },
       {
-        name: "Paul",
-        title: "Research Scientist, Biogen",
+        name: "Paula",
+        title: "Biogenetics at SDSU",
         content:
-          "With Anara, I'm able to do in 30 mins what used to take 3 hours. There's nothing else like it.",
+          "With DuNorth I'm able to do all my HW in 30 mins -- it used to take 3 hours. There's nothing else like it.",
       },
       {
-        name: "Alice",
-        title: "Associate, Goldman Sachs",
+        name: "Alexis",
+        title: "Data Science Undergrad, Georgia Tech",
         content:
-          "Genuinely makes research so much more intuitive. The related documents feature is amazing, and I love how effortless the annotation process is.",
+          "Genuinely makes research so much more intuitive. A hive mind of documents related to everything you're doing in all classes and endeavors at once!",
       },
     ],
     [
       {
-        name: "Filip",
-        title: "Data Scientist, Intel",
+        name: "James",
+        title: "Psychology Undergrad, SDSU",
         content:
-          "I've tried a lot of AI research apps, and Anara is so far ahead in simplicity, quality, and speed!",
+          "I've tried a lot of AI hw / chatbot apps, and DuNorth is by far the best in terms of simplicity, quality, and speed... not even close.",
       },
       {
-        name: "Zeyu",
+        name: "Zora",
         title: "Lab Assistant, UC Berkeley",
         content:
-          "I'm using Anara right now for my research into single-cell multiomics frameworks, and it's amazing!",
+          "I'm using DuNorth RIGHT NOW for my courses on BOTH history in 19th century America and single-cell multiomics frameworks! Saves me a lot of time and hastle and have more time to kick it with friends.",
       },
       {
         name: "Tylar",
-        title: "PhD Student, Stanford University",
+        title: "PhD Student at Stanford",
         content:
-          "As a PhD candidate, Anara is my number one app for annotations, lit reviews and manuscripts.",
+          "As a PhD candidate, DuNorth is STILL my number 1 app for speed reading, auto-doing my HW, and answering discussion questions.",
       },
       {
         name: "Alamin",
-        title: "Dermatologist, Mayo Clinic",
+        title: "Dermatology Student, Med School",
         content:
-          "Anara makes diving into research papers so much easier and quicker. A must-try tool.",
+          "DuNorth makes diving into research papers so much easier and quicker. A must-try tool.",
       },
     ],
-    [
+    [ 
       {
-        name: "Samantha",
-        title: "Neuroscientist, NIH",
+        name: "Samuel",
+        title: "Neuroscience, Northwestern",
         content:
-          "Anara makes life easier for anyone new to the team. It breaks down complex information so effectively that newcomers can contribute and feel included right from the start.",
+          "DuNorth makes life easier for basically everyone I know. Some of us don't even look at Canvas anymore. It breaks down what's due, how to due it, and basically does it for you (cuz it's basically done all your readings so far - you don't even need to upload them).",
       },
       {
-        name: "Michael",
-        title: "Physician, Cedars Sinai",
+        name: "Jordan",
+        title: "Physics, CUNY",
         content:
-          "Interacting with documents on Anara is like speaking to the team who wrote the research paper. It's fantastic.",
+          "Doing school with DuNorth... is like not doing it if you don't want to :)",
       },
       {
         name: "Nabila",
-        title: "Undergraduate Student, MIT",
+        title: "History Undergrad, MSU",
         content:
-          "It aided in my research works tremendously…The review writing that would take me several days now it's only a matter of minutes!!! I already recommended it to all my friends struggling with research papers.",
+          "It aided in my research works tremendously… The reading reports and annotated bibliographies used to take several days, but now only a matter of minutes. I already recommended it to all my friends struggling with and essays.",
       },
     ],
     [
       {
-        name: "Zevarn",
-        title: "Physician, Kaiser Permanente",
+        name: "Jorria",
+        title: "Pre-Med, Yale",
         content:
-          "I love how functional and flexible it is for understanding papers. It provides a unified platform for reading, writing, and referencing, plus the search features help you explore concepts easily. It makes the whole process of working with academic papers so much smoother.",
+          "I love how functional and flexible DuNorth is for classwork when I skip weeks on end. It's like an assistant that goes to class for you, takes notes, and sets up assignments for you to have the easiest possible time completing them. It makes the whole process of working through academic papers so much smoother.",
       },
       {
-        name: "Elyane",
-        title: "Astroparticle Physicist",
+        name: "Elaine",
+        title: "Astrophysics, Berkeley",
         content:
-          "It's so useful to be able to find a little piece of information you know you've already read in a paper but you don't remember where. And it's trustworthy since it show you where it picked it's information, and you can verify afterward.",
+          "It's so useful to be able to find a little piece of information you know you've already read in a paper but you don't remember where. And it's trustworthy since it shows you where it picked it's information, and you can verify afterward.",
       },
       {
         name: "Taylor",
-        title: "Master's Student, Columbia University",
+        title: "English, Columbia University",
         content:
-          "Excellent tool to use, especially for understanding and translating research papers. I'm enjoying it. Thank you",
+          "Excellent tool to use, especially for those minor HW assignments that take up hours each week. Enjoying it. Thank you",
       },
     ],
   ];
@@ -100,7 +100,7 @@ export const Testimonials: React.FC = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          What people are saying
+          What students are saying
         </h2>
 
         <div

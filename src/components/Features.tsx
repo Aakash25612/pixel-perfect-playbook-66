@@ -10,23 +10,23 @@ export const Features: React.FC = () => {
     {
       image:
         "https://api.builder.io/api/v1/image/assets/TEMP/b155b43a7569a17b97cd1de4dfc0891693164460?placeholderIfAbsent=true",
-      title: "Get answers you can trust",
+      title: "Handles all assignments",
       description:
-        "Every insight links to original sources so you can verify information with a single click",
+        "Let us do your p-sets, reading questions, and essays using course materials as your prof wishes.",
     },
     {
       image:
         "https://api.builder.io/api/v1/image/assets/TEMP/92762232d271445717f7e2a40eb913ca5b4917b5?placeholderIfAbsent=true",
-      title: "Responds using your files",
+      title: "Already knows your courses",
       description:
-        "Eliminate hallucinations by limiting responses to your uploaded files",
+        "We link up to your Canvas, constantly updating, so there's no work to do on your part.",
     },
     {
       image:
-        "https://api.builder.io/api/v1/image/assets/TEMP/5fb8b04e0e203cab86c7825848555eda0ca32cfc?placeholderIfAbsent=true",
-      title: "Find citations automatically",
+        "https://api.builder.io/api/v1/image/assets/TEMP/5fb8b04e0e203cab86c7825848555eda0ca32cfc?placeholderIfAbsent=true",      
+        title: "Never miss a deadline",
       description:
-        "Anara searches for relevant papers and books based on your writing",
+        "We keep track of assignments as they come in, budget time, and tell you what to work on today.",
     },
   ];
 
@@ -34,9 +34,28 @@ export const Features: React.FC = () => {
     {
       title: (
         <>
-          Understand any file or
+          Your entire academic
           <br />
-          group of files, instantly
+          life, perfectly organized
+        </>
+      ),
+      altText: "Your entire academic life, organized perfectly",
+      description: (
+        <>
+          Create folders for each course, group related papers by topic, 
+          <br />
+          and manage hundreds of documents without any chaos
+        </>
+      ),
+      image:
+        "https://api.builder.io/api/v1/image/assets/TEMP/065eb60eac00bb375691563fd74ca26e89d272d5?placeholderIfAbsent=true",
+    },
+    {
+      title: (
+        <>
+          Write essays
+          <br />
+          with ease
         </>
       ),
       altText: "Understand any file or group of files, instantly",
@@ -44,30 +63,11 @@ export const Features: React.FC = () => {
         <>
           Whether it's a dense 200-page textbook, a new clinical study, or a
           <br />
-          technical research paper, just upload it and start asking questions
+          technical math lecture that you skipped, just ask us and we'll summarize it.
         </>
       ),
       image:
         "https://api.builder.io/api/v1/image/assets/TEMP/448af277074f66a5f2a680fed3cacd8ffcbdb971?placeholderIfAbsent=true",
-    },
-    {
-      title: (
-        <>
-          Get concise, scholarly
-          <br />
-          answers to any question
-        </>
-      ),
-      altText: "Get concise, scholarly answers to any question",
-      description: (
-        <>
-          When you ask a question, Anara searches major academic databases
-          <br />
-          like PubMed, arXiv and JSTOR to deliver a comprehensive response
-        </>
-      ),
-      image:
-        "https://api.builder.io/api/v1/image/assets/TEMP/065eb60eac00bb375691563fd74ca26e89d272d5?placeholderIfAbsent=true",
     },
     {
       title: (
@@ -91,9 +91,9 @@ export const Features: React.FC = () => {
     {
       title: (
         <>
-          Build a single, searchable
+          No more schedules,
           <br />
-          library for all your projects
+          No more planners
         </>
       ),
       altText: "Build a single, searchable library for all your projects",
@@ -110,23 +110,23 @@ export const Features: React.FC = () => {
   ];
 
   const stats = [
-    { label: "Files analyzed", value: "14M" },
-    { label: "Citations generated", value: "530K" },
-    { label: "Answers generated", value: "27M" },
-    { label: "Hours saved per paper", value: "20H" },
+    { label: "Files analyzed", value: "17M" },
+    { label: "Assignments completed", value: "630K" },
+    { label: "Questions answered", value: "27M" },
+    { label: "Hours saved per week", value: "12H" },
   ];
 
   return (
     <div className="py-16 w-full">
       <section ref={featuresRef} className="w-full">
         <p
-          className={`font-perfectly-nineties whitespace-break-spaces text-[40px] font-[550] md:text-[56px] md:leading-[50px] leading-tight pb-7  text-center max-w-full ${
+          className={`font-perfectly-nineties whitespace-break-spaces text-[40px] font-[550] md:text-[56px] md:leading-[54px] leading-normal pb-7  text-center max-w-full ${
             featuresVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
           }`}
         >
-          Built specifically for academic workflows
+          How students are using DuNorth
         </p>
 
         <div
@@ -197,20 +197,20 @@ export const Features: React.FC = () => {
                 Files analyzed
               </div>
               <div className="text-text-secondary font-interDisplay text-[40px] font-medium">
-                14M
+                17M
               </div>
             </div>
             <div className="flex flex-col items-start text-center p-10 rounded-7 bg-[#F7F7F7] gap-24">
               <div className="text-text-secondary mb-4 leading-none font-[450]">
-                Citations generated
+                Assignments completed
               </div>
               <div className="text-text-secondary font-interDisplay text-[40px] font-medium">
-                530K
+                630K
               </div>
             </div>
             <div className="flex flex-col items-start text-center p-10 rounded-7 bg-[#F7F7F7] gap-24">
               <div className="text-text-secondary mb-4 leading-none font-[450]">
-                Answers generated
+                Questions answered
               </div>
               <div className="text-text-secondary font-interDisplay text-[40px] font-medium">
                 27M
@@ -218,10 +218,10 @@ export const Features: React.FC = () => {
             </div>
             <div className="flex flex-col items-start text-center p-10 rounded-7 bg-[#F7F7F7] gap-24">
               <div className="text-text-secondary mb-4 leading-none font-[450]">
-                Hours saved per paper
+                Hours saved per week
               </div>
               <div className="text-text-secondary font-interDisplay text-[40px] font-medium">
-                20H
+                12H
               </div>
             </div>
           </div>
@@ -244,7 +244,7 @@ const WorkflowFeature: React.FC<{ feature: any; index: number }> = ({
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <p className="font-perfectly-nineties whitespace-break-spaces text-[40px] font-[550] md:text-[56px] md:leading-[50px] leading-tight pb-7  text-center max-w-full">
+        <p className="font-perfectly-nineties whitespace-break-spaces text-[40px] font-[550] md:text-[56px] md:leading-[54px] leading-normal pb-7  text-center max-w-full">
           {feature.title}
         </p>
         {/* <p class="whitespace-break-spaces text-[40px] font-[550] md:text-[56px] md:leading-[50px] leading-tight pb-7 font-perfectlyNineties text-center max-w-full">Built specifically for academic workflows</p> */}

@@ -8,8 +8,8 @@ interface CompanySet {
 
 const CARD_COUNT = 7;
 const ANIMATION_DURATION = 0.2; // seconds (make a bit longer for smoothness)
-const STAGGER_PER_CARD = 0.25; // seconds, adjust as desired
-const SHOW_DURATION = 4; // seconds for each image
+const STAGGER_PER_CARD = 0.15; // seconds, adjust as desired
+const SHOW_DURATION = 3.5; // seconds for each image
 
 // Card component for a single logo card with Framer Motion animation
 const AnimatedLogoCard: React.FC<{
@@ -88,7 +88,19 @@ const AnimatedLogoCard: React.FC<{
             src={isShowingNext ? next.logo : current.logo}
             alt={`${isShowingNext ? next.name : current.name} logo`}
             className={
-              "max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+              (isShowingNext ? next.name : current.name) === "UMass Amherst"
+                ? "max-w-[48%] max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                : (isShowingNext ? next.name : current.name) === "UCLA"
+                ? "max-w-[57%] max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                : (isShowingNext ? next.name : current.name) === "UC Berkeley"
+                ? "max-w-[75%] max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                : (isShowingNext ? next.name : current.name) === "MIT"
+                ? "max-w-[102%] max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                : (isShowingNext ? next.name : current.name) === "University of Cambridge"
+                ? "max-w-[102%] max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                : (isShowingNext ? next.name : current.name) === "Harvard University"
+                ? "max-w-[98%] max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                : "max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
               // + (isShowingNext ? "" : " animate-float")
             }
             onError={(e) =>
@@ -104,22 +116,20 @@ const AnimatedLogoCard: React.FC<{
 export const AnimatedCompanies: React.FC = () => {
   const companySets: CompanySet[][] = [
     [
-      { name: "Amazon", logo: "/logos/amazon.png" },
+      { name: "UCLA", logo: "/logos/University_of_California,_Los_Angeles_logo.svg" },
       { name: "Caltech", logo: "/logos/caltech.png" },
-      { name: "Kaiser Permanente", logo: "/logos/kaiser-permanente.png" },
-      { name: "Meta", logo: "/logos/meta.png" },
+      { name: "Northwestern University", logo: "/logos/Northwestern_University_wordmark.svg" },
       { name: "Stanford", logo: "/logos/stanford.png" },
-      { name: "Reckitt", logo: "https://logo.clearbit.com/reckitt.com" },
-      { name: "Biogen", logo: "/logos/biogen.png" },
+      { name: "MIT", logo: "/logos/mit.png" },
+      { name: "UC Berkeley", logo: "/logos/University_of_California,_Berkeley_logo.svg" },
     ],
     [
-      { name: "NVIDIA", logo: "/logos/nvidia.png" },
+      { name: "Northeastern University", logo: "/logos/Northeastern_University_wordmark.svg" },
+      { name: "UMass Amherst", logo: "/logos/UMass_Amherst_Shortform_Wordmark.svg" },
+      { name: "Harvard University", logo: "/logos/Harvard_University_logo.svg" },
       { name: "University of Cambridge", logo: "/logos/cambridge.png" },
-      { name: "PWC", logo: "https://logo.clearbit.com/pwc.com" },
-      { name: "Goldman Sachs", logo: "/logos/goldman-sachs.png" },
-      { name: "MIT", logo: "/logos/mit.png" },
-      { name: "GSK", logo: "/logos/gsk.png" },
-      { name: "Roche", logo: "https://logo.clearbit.com/roche.com" },
+      { name: "Georgia Tech", logo: "/logos/Georgia_Tech_logo_2021.svg" },
+      { name: "San Diego State University", logo: "/logos/San_Diego_State_University_primary_logo.svg" },
     ],
   ];
 
