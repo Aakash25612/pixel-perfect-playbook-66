@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/Button";
 import { AnimatedCompanies } from "./AnimatedCompanies";
 import { useEntranceAnimation } from "@/hooks/useEntranceAnimation";
-import { motion, AnimationDefinition, Variants } from "framer-motion";
+import { motion, AnimationDefinition } from "framer-motion";
 
 export const Hero: React.FC = () => {
   const isVisible = useEntranceAnimation();
@@ -31,36 +31,9 @@ export const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Framer Motion variant for fade-in from bottom with blur removal
-  const fadeInUpWithBlur: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 65,
-      filter: "blur(12px)",
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.7,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
-
   return (
     <section className="pt-[150px] pb-16 w-full">
-      <motion.div
-        className="w-full text-center"
-        initial="hidden"
-        animate="visible"
-        variants={fadeInUpWithBlur}
-      >
+      <div className="w-full text-center">
         <h1
           className={`font-perfectly-nineties font-[550]  text-balance text-center mx-auto leading-[39px] sm:leading-[46px] md:leading-[58px] lg:leading-[68px] xl:leading-[76px] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] xl:text-[72px] max-w-[820px]  ${
             isVisible
@@ -68,8 +41,7 @@ export const Hero: React.FC = () => {
               : "opacity-0 translate-y-12 scale-95"
           }`}
         >
-          AI workspace for students
-          <br />
+          AI workspace for students<br />
           who use Canvas
         </h1>
 
@@ -86,7 +58,7 @@ export const Hero: React.FC = () => {
           className="text-secondary-foreground leading-6 max-w-[750px] mt-7 mx-auto text-center text-balance"
           style={{ opacity: 1, filter: "blur(0px)", transform: "none" }}
         >
-          The moment you sign up, we extract all your courses, readings, and
+          The moment you sign up, we extract all your courses, readings, and 
           assignments — and do them with you to save hours each week.
         </p>
 
@@ -173,13 +145,13 @@ export const Hero: React.FC = () => {
               muted
               playsInline
               className="absolute w-[75%] h-auto transition-all duration-700 z-10"
-              style={{
-                filter: "grayscale(100%)",
-                top: "10%",
-                left: "50%",
-                transform: "translateX(-50%)",
-                maxHeight: "80%",
-                objectFit: "contain",
+              style={{ 
+                filter: 'grayscale(100%)',
+                top: '10%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                maxHeight: '80%',
+                objectFit: 'contain'
               }}
               onLoadedData={(e) => {
                 const video = e.target as HTMLVideoElement;
@@ -189,7 +161,7 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0  transition-opacity duration-500"></div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
